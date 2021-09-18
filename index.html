@@ -1,0 +1,224 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>Hyper Hyper Space</title>
+	<meta name="description" content="The Hyper Hyper Space is a browser-based p2p framework for application interoperability">
+	<meta name="author" content="Santiago Bazerque">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="cavepaint.css">
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<body class="light white">
+
+	<nav class="bar text-padding no-underlines inner-feature-width">
+		<a href="https://www.hyperhyperspace.org"><img src="../logos/HHS_Logo_small.png" alt="Hyper Hyper Space" class="padding-left padding-top"></a>
+	</nav>
+	<div style="border-top: 1px solid; border-bottom: 1px solid;" class="bar inner-feature-width">
+		<span class="padding monospace">White Paper</span>
+	</div>
+	<div class="inner-feature-width">
+		<h2 style="border-bottom: 1px solid;" class="no-margin-bottom padding-left">Hyper Hyper Space</h2>
+		<div class="two-column"><span class="monospace small  padding-left"> by <b>Santiago Bazerque</b></span><span class="text-right padding-right monospace small">21st September <b>2021</b><br>Draft</span></div>
+	</div>
+	<div class="inner-feature-width gutter-top grid gap-border-width">
+		
+		<div class="grid-width-three hide mobile no-padding-bottom">
+		</div>
+		<div class="grid-width-nine padding-left">
+			<div class="page-width">
+				<p>When we access a website, the choice of which service provider we are using does not matter. Thanks
+				to the networking protocols that underpin the Internet, every service provider gives us access to the entire
+				network, creating a universal solution for <i>connectivity</i>.</p>
+				
+				<p>The Hyper Hyper Space protocol stack proposes a similar universal solution for <i>information 
+				systems</i>. While these systems work as peer-to-peer applications, a fully in-browser JavaScript implementation of
+				Hyper Hyper Space (using IndexedDB for persistence and WebRTC as browser-to-browser transport) is available, thus
+			    making them as easily accessible as any other website.</p>
+
+				<h4>Interoperability of Information Systems</h4>
+			</div>
+		</div>
+		<div class="grid-width-three hide mobile no-padding-bottom text-trim" style="border-top: 1px solid">
+			<span class="small monospace"><a href="https://www.hyperhyperspace.org">Hyper Hyper Space</a> is a 
+			novel <span class="base-color">information interoperability</span> technology stack that runs a full peer in any 
+			<span class="red">unmodified modern browser</span>, creating a browser-to-browser mesh network and 
+			solving the distribution problem for dapps.
+			</span>
+		</div>
+		<div class="grid-width-nine padding-left">
+			<div class="page-width">
+				<p>The mainstream information systems we access through the Internet (for social networking, 
+				communications, workspace collaboration, e-commerce, etc.) work as information silos. The
+				network interoperability makes them universally accessible, but that property does not extend
+				to the <i>information</i> within, which is locked for access, interaction and modification only in 
+				the platform where it was created.
+				</p>
+
+				<p>One proposed solution to this problem is replacing each a system by a <i>federation</i> of
+				interoperable systems, from which participants can choose. The Hyper Hyper Space protocols propose
+				instead a fully decentralized alternative, inspired by the design of the Internet itself.</p>
+
+				<p>The universal connectivity provided by the Internet works by defining a very simple network
+				model, that can be implemented over virtually any networking technology: optimistic delivery
+				of small packets of information. Each connected application then implements additional protocols,
+				like TCP and UPD , to gain additional network guarantees according to their own needs: ordering, 
+				reliability, flow control, congestion prevention, etc. An important property of this design, known
+				as the <i>end-to-end principle</i>, is that network operators are only bound to implement the 
+				simple packet-switching model, while application designers are free, up to a point, to create 
+				higher-level protocols that run on the devices that connect to the network. This feature played
+				a crucial role in the development and adoption of the Internet.
+				</p>
+			</div>
+		</div>
+		<div class="grid-width-three hide mobile text-trim" style="border-top: 1px solid">
+			<span class="small monospace">The <a href="https://www.hyperhyperspace.org">Hyper Hyper Space</a> protocols 
+			apply the Internet's <span class="base-color">end-to-end principle</span> to the design of 
+			<i>information systems</i>.
+			</span>
+		</div>
+		<div class="grid-width-nine padding-left">
+			<div class="page-width">
+				<p>The Hyper Hyper Space, following the same pattern, defines a simple <i>information representation</i>
+				model, using <b>immutable append-only merkle-DAGs</b>. This is a generalization of the model used successfully
+				by blockchain-based cryptocurrencies, but instead of storing financial transactions, each node in the graph
+				may contain an arbitrary JSON-like object. Objects may reference each other by using their cryptographic
+				hashes, like blocks do in a blockchain. Merkle-DAGs are easy to verify and synchronize between
+				devices, while also offering a versatile representation to application-level protocol designers. Gossip and
+				synchronization protocols, running over a mesh network overlay, can be customized by applications both 
+				to restrict access to the resulting DAG and to enforce application-specific validation rules. The resulting
+				optimistic replication of application-defined DAGs fullfills a similar unifying role to the one packet-switching 
+				had in the design of the Internet.</p>
+
+				<p>Since the DAGs used by different applications don't need to be disjoint, this model enables new forms of 
+				interoperability. The support chat in a company's e-commerce store could be included inside
+				the workspace collaboration system -if both were based on Hyper Hyper Space- not by using an API but by actually 
+				working on the same data strctures encoded over the DAG. New forms of content linking could be imagined, involving not
+				just unidirectional links but richer interrelations over shared information. Instead of URLs and anchors inside
+				a document, the entire internal structure of an entity as it is represented on the DAG can be referenced from 
+				the outside. The cryptographic hash function used for referencing objects guarantees that this can be done without 
+				unwanted collisions.
+				</p>
+
+				<h4>Information as merkle-DAGs</h4>
+
+				<p>There is a significant mismatch between writing to an append-only immutable DAG and the mutable
+				data structures an application designer may expect. The Hyper Hyper Space offers a data modelling library,
+				currently available for TypeScript and JavaScript environments, and a hash-based key-value store. Datatypes
+				created using the library can be automatically translated into operations over the immutable DAG and saved
+				to the store. Once saved, they can be syncrhonized automatically over the mesh network. A memory
+				backend for transient uses, one backed by IndexedDB for web browsers, and a SQLite-based version for use
+				in NodeJs are included. 
+				</p>
+
+				<p>Storable objects can be constructed using literals (strings, numbers, arrays, dictionaries, etc.) and references to 
+					other objects in the store. These references, however, will also use hashes to identify their targets.</p>
+	
+					<p>In the following example, an object of type <span class="monospace">Message</span> references another of type 
+					<span class="monospace">Identity</span> through its <span class="monospace">author</span> field, using its hash value <span class="monospace light warm green">fa34d0&mldr;</span>:</p>
+	
+					<img class="padding-top padding-bottom" src="img/hello_mom.png">
+					
+					<p>It is easy to see that this representation only works for immutable objects. If Ken changed his name to Kenny, the
+					hash of the <span class="monospace">Identity</span> object would change. All existing references, including the one in the 
+					<span class="monospace">Message</span> object above, would still point to the original version!
+					</p>
+
+					<img class="padding-top padding-bottom" src="img/save_op.png">
+
+				<h4>Spaces</h4>
+			</div>
+		</div>
+		<div class="grid-width-three hide mobile text-trim" style="border-top: 1px solid">
+			<span class="small monospace">Look up the space <span class="green">suburb suburb awake</span> in the  <a href="https://hyperhyper.space/chat-window" target="_blank">chat system example</a>
+			to discuss this White Paper!
+			</span>
+		</div>
+		<div class="grid-width-nine padding-left">
+			<div class="page-width">
+
+				<p>On the Internet, IP addresses are the network-independent identifiers that enable universal connectivity.
+				Similarly, Hyper Hyper Space introduces an application-independent representation for information objects: <i>Spaces</i>.
+				A space may contain a chat room, a discussion forum, an e-commerce store, a blog, etc.
+				</p>
+
+				<p>Spaces are universally accessible using <span style="border-bottom: 1px dotted" title="If the system gains popularity, we may need 4-word codes!">3-word codes</span>.
+				When ownership and access restrictions are necessary, Spaces use Hyper Hyper Space native cryptographic identities, that can be exported from one application to another,
+				to authenticate peers.
+				</p>
+				
+				<p>As an example, here is a <a href="https://hyperhyper.space/chat-window" target="_blank">demo chat system</a> based on Hyper Hyper Space. Each
+				chat room is a space, and has its own 3-word code. The page is static, and the contents of each chat room are synchronized between participants 
+				browser-to-browser. If you copy the page and host it elsewhere (or locally on your own computer), everthing would work exactly the same.
+				</p>
+
+				<p>Websites may be used to look up spaces like in the example above. Spaces can also be <b>embedded using iFrames</b>, and a website may
+				also pin down and load a fixed space, providing an experience similar to a <b>regular page</b>.
+				</p>
+
+				
+			</div>
+		</div>
+		<div class="grid-width-three hide mobile text-trim" style="border-top: 1px solid">
+			<span class="small monospace">Look up the space <span class="green">suburb suburb awake</span> in the  <a href="https://hyperhyper.space/chat-window" target="_blank">chat system example</a>
+			to discuss this White Paper!
+			</span>
+		</div>
+		<div class="grid-width-nine padding-left">
+			<div class="page-width">
+
+
+				
+			</div>
+		</div>
+		<div class="grid-width-three hide mobile text-trim" style="border-top: 1px solid">
+			<span class="small monospace">The <a href="https://www.hyperhyperspace.org">Hyper Hyper Space</a> protocols 
+			apply the Internet's <span class="base-color">end-to-end principle</span> to the design of 
+			<i>information systems</i>.
+			</span>
+		</div>
+		<div class="grid-width-nine padding-left">
+			<div class="page-width">
+
+				
+			</div>
+		</div>
+		<div class="grid-width-three hide mobile text-trim" style="border-top: 1px solid">
+			<span class="small monospace">As peers communicate <span class="yellow">exclusively over the shared merkle-DAG</span>,
+			many of the challenges of distributed computing are encapsulated.
+			</span>
+		</div>
+		<div class="grid-width-nine padding-left">
+			<div class="page-width">
+				
+				
+			</div>
+		</div>
+		<div class="grid-width-three hide mobile text-trim" style="border-top: 1px solid">
+			<span class="small monospace">Just like references to an object within a single computer can be created by taking its memory 
+			address (say in the <i>C programming language</i> model), peers in a <i>space</i> can reference an object by using its <span class="base-color">hash</span>.
+			</span>
+		</div>
+		<div class="grid-width-nine padding-left">
+			<div class="page-width">
+
+
+			</div>
+		</div>
+		<div class="grid-width-three hide mobile no-padding-bottom text-trim" style="border-top: 1px solid">
+			<span class="small monospace"><a href="https://www.hyperhyperspace.org">Hyper Hyper Space</a> is the 
+			first <span class="base-color">Web 3</span> technology that runs a full peer in any 
+			<span class="red">unmodified modern browser</span>, solving the distribution problem for dapps.
+			</span>
+		</div>
+		
+
+	</div>
+
+
+
+</body>
+</html>
