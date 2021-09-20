@@ -15,7 +15,7 @@
 <body class="light white">
 
 	<nav class="bar text-padding no-underlines inner-feature-width">
-		<a href="https://www.hyperhyperspace.org"><img src="../logos/HHS_Logo_small.png" alt="Hyper Hyper Space" class="padding-left padding-top"></a>
+		<a href="https://www.hyperhyperspace.org"><img src="img/HHS_Logo_small.png" alt="Hyper Hyper Space" class="padding-left padding-top"></a>
 	</nav>
 	<div style="border-top: 1px solid; border-bottom: 1px solid;" class="bar inner-feature-width">
 		<span class="padding monospace">White Paper</span>
@@ -24,24 +24,140 @@
 		<h2 style="border-bottom: 1px solid;" class="no-margin-bottom padding-left">Hyper Hyper Space</h2>
 		<div class="two-column"><span class="monospace small  padding-left"> by <b>Santiago Bazerque</b></span><span class="text-right padding-right monospace small">21st September <b>2021</b><br>Draft</span></div>
 	</div>
-	<div class="inner-feature-width gutter-top grid gap-border-width">
-		
-		<div class="grid-width-three hide mobile no-padding-bottom">
-		</div>
-		<div class="grid-width-nine padding-left">
-			<div class="page-width">
-				<p>When we access a website, the choice of which service provider we are using does not matter. Thanks
-				to the networking protocols that underpin the Internet, every service provider gives us access to the entire
-				network, creating a universal solution for <i>connectivity</i>.</p>
-				
-				<p>The Hyper Hyper Space protocol stack proposes a similar universal solution for <i>information 
-				systems</i>. While these systems work as peer-to-peer applications, a fully in-browser JavaScript implementation of
-				Hyper Hyper Space (using IndexedDB for persistence and WebRTC as browser-to-browser transport) is available, thus
-			    making them as easily accessible as any other website.</p>
 
-				<h4>Interoperability of Information Systems</h4>
+	<div class="inner-feature-width gutter-top" style="display:flex;">
+		
+		<div class="hide mobile no-padding-bottom" style="width: 25%;">
+		</div>
+		<div class="padding-left" style="flex-grow: 4;">
+			<div class="page-width">
+				<p>On the Internet, every ISP offers access to the entire network: the Internet Protocols enable 
+				<i>universal connectivity</i>. This property does not hold, however, for the information stored 
+				<i>within</i> each of the platforms and applications we use online. On the contrary, information
+				can usually be accessed only through the system where it was created, limiting platform choice and 
+				application interoperability. 
+				</p>
+
+				<p>Building upon the Internet's universal connectivity premise, the Hyper Hyper Space project
+				proposes a framework for <i>universal information access</i>. Under the proposed model, applications
+				don't use the client-server model, with the client using APIs to perform application functions, but a 
+				fully distributed one, in which all applications use a standardized information representation
+				based on immutable Merkle-DAGs. The framework provides building blocks
+				for the creation of reusable open formats, from which secure distributed data structures can be
+				derived. The end result simplifies the creation of peer-to-peer information systems and improves
+				application interoperability.
+
+				<p>To make these new distributed, interoperable applications universally available, a JavaScript 
+				implementation of the Hyper Hyper Space protocol stack has been adapted to run inside a 
+				modern web browser, using IndexedDB for persistence and WebRTC as transport. This enables a regular
+				website to work as a web-based peer, creating a local database <b>inside</b> the browser that is then 
+				synchronized automatically using a peer-to-peer network overlay.
+				</p>
+
+				<h4>Information as Merkle-DAGs</h4>
+
+				<p>Just like the Internet Protocol uses a simplistic network definition (optimistic delivery 
+				of discrete packages) to build its network interconnection capabilities, Hyper Hyper Space-based 
+				applications use a single data structure to represent information: an <b>immutable, append-only 
+				Merkle-DAG</b>. This is a generalization of the model used 
+				by blockchain-based cryptocurrencies, but instead of storing financial transactions, each node in 
+				the graph may contain an arbitrary application-defined JSON-like object. Objects reference each 
+				other by using their cryptographic hashes, like blocks do in a blockchain, and are authenticated
+				using cryptographic signatures. The resulting Merkle-DAG can be synchronized 
+				accross devices and verified efficently. It forms the basis of Hyper Hyper Space's interoperability 
+				capabilities.</p>
+
+				<h5>Data Model</h5>
+
+				<p>There is a significant mismatch between writing to an append-only immutable DAG and the 
+				data structures an application designer may expect. In the Hyper Hyper Space data model, each
+				object defined by the application is mapped into a JSON literal and hashed. The resulting 
+				&lt;hash, literal&gt; pair is then appended to the application's DAG. While primitive data types are 
+				mapped to JSON verbatim, refrences to other objects are transformed into <b>hash-based references</b> that form
+				arcs in the graph:
+
+				<div class="text-trim">
+					<div class="dull white text-padding">
+						<span class="monospace">
+							let ken = new Identity('Ken', keypair);<br>
+							<br>
+							let m = new Message();<br>
+							m.text = 'hello Mom'<br>
+							m.timestamp = Date.now();<br>
+							m.author = ken;<br>
+						</span>
+					</div>
+				</div>
+
+				<img class="padding" src="img/hello_mom.png">
+
+				<p>When one an object is replicated from one peer to another, its references are identified and sent
+				automatically. All objects are typed, and each application informs the set of datatypes that it will
+				accept. Types come equipped with a validation function that will be used by the replication layer 
+				to accept or reject received additions to the local copy of the DAG.
+				</p>
+
+				<h5>Mutability</h5>
+
+				<p>Mutable objects are represented using <b>operation-based datatypes</b>. A mutable object is appended to
+				the DAG in a definied initial state, and later changes are represented as mutation objects that
+				reference it. Since when replicating a mutable object all the mutations must be replicated as well,
+				both are labelled as such in the DAG.</p>
+				
+				<p>
+				In the following example, the <span class="monospace">Message</span>
+				object created above is inserted into a <span class="monospace">MutableSet</span>:
+				</p>
+
+				<div class="text-trim">
+					<div class="dull white text-padding">
+						<span class="monospace">
+							let m = new Message();<br>
+							...<br>
+							let s = new MutableSet();<br>
+							s.add(m);<br>
+						</span>
+					</div>
+				</div>
+				
+				<img class="padding" src="img/save_op.png">
+				
+				
+				<p>The created <span class="monospace">MutableSet</span> object, that initially represents an empty set,
+				includes a random seed in its JSON-like representation. This makes its hash <span class="monospace light warm green">c111fa&mldr;</span>
+				unique. Otherwise, the system would accept a <b>single</b> empty set object, like in the mathematical definition
+				of set theory, where extensional equality makes all empty sets represent the same entity. As operations adding and removing elements from the set are later appended to the DAG, the hash 
+				of the set object itself remains constant and can be safely used to create references in the rest of the model.
+				Operations will usually also include a random nonce, like the <span class="monospace">AddOp</span> above, to
+				make them unique. 	
+				</p>
+
+				<p>Operations also include a <span class="monospace">prev</span> field that references to the most 
+				recent mutations that have been accepted in the local DAG. In the following example, a series of
+				operations on an observed-remove set have been executed serially on a peer. The vertical arrows
+				indicate the <span class="monospace">prev</span> relationship, while the <span class="monospace">DeleteOp</span>
+				object has an additional blue arrow pointing to the additions that are being cancelled:
+				</p>
+
+				<img class="padding" src="img/mut_set.png">
+
+				<p>When an object is modified concurrently by several peers, <span class="monospace">prev</span> doesn't
+				guarantee that all operations will reach peers in the same order. Mutable datatypes need to	ensure 
+				convergence, usually by employing commutative operations, following the techniques developed for CRDTs.
+				Below we see how two peers, Ken and Mary, have concurrently added some elements to a set. Later on
+				a synchronization occurs, and finally Ken adds a last element:</p>
+
+				<img class="padding" src="img/mut_set_concurrent.png">
+
+				<p>When comparing the state of a mutable object in two different replicas, the <span class="monospace">prev</span>
+				relationship allows peers to quickly determine if both replicas have the same set of operations, if one replica
+				supercedes the other, or if they are in divergent states, usually within a single round-trip.
+				</p>
+
 			</div>
 		</div>
+	</div>
+	<div class="inner-feature-width gutter-top grid gap-border-width">
 		<div class="grid-width-three hide mobile no-padding-bottom text-trim" style="border-top: 1px solid">
 			<span class="small monospace"><a href="https://www.hyperhyperspace.org">Hyper Hyper Space</a> is a 
 			novel <span class="base-color">information interoperability</span> technology stack that runs a full peer in any 
@@ -51,84 +167,7 @@
 		</div>
 		<div class="grid-width-nine padding-left">
 			<div class="page-width">
-				<p>The mainstream information systems we access through the Internet (for social networking, 
-				communications, workspace collaboration, e-commerce, etc.) work as information silos. The
-				network interoperability makes them universally accessible, but that property does not extend
-				to the <i>information</i> within, which is locked for access, interaction and modification only in 
-				the platform where it was created.
-				</p>
-
-				<p>One proposed solution to this problem is replacing each a system by a <i>federation</i> of
-				interoperable systems, from which participants can choose. The Hyper Hyper Space protocols propose
-				instead a fully decentralized alternative, inspired by the design of the Internet itself.</p>
-
-				<p>The universal connectivity provided by the Internet works by defining a very simple network
-				model, that can be implemented over virtually any networking technology: optimistic delivery
-				of small packets of information. Each connected application then implements additional protocols,
-				like TCP and UPD , to gain additional network guarantees according to their own needs: ordering, 
-				reliability, flow control, congestion prevention, etc. An important property of this design, known
-				as the <i>end-to-end principle</i>, is that network operators are only bound to implement the 
-				simple packet-switching model, while application designers are free, up to a point, to create 
-				higher-level protocols that run on the devices that connect to the network. This feature played
-				a crucial role in the development and adoption of the Internet.
-				</p>
-			</div>
-		</div>
-		<div class="grid-width-three hide mobile text-trim" style="border-top: 1px solid">
-			<span class="small monospace">The <a href="https://www.hyperhyperspace.org">Hyper Hyper Space</a> protocols 
-			apply the Internet's <span class="base-color">end-to-end principle</span> to the design of 
-			<i>information systems</i>.
-			</span>
-		</div>
-		<div class="grid-width-nine padding-left">
-			<div class="page-width">
-				<p>The Hyper Hyper Space, following the same pattern, defines a simple <i>information representation</i>
-				model, using <b>immutable append-only merkle-DAGs</b>. This is a generalization of the model used successfully
-				by blockchain-based cryptocurrencies, but instead of storing financial transactions, each node in the graph
-				may contain an arbitrary JSON-like object. Objects may reference each other by using their cryptographic
-				hashes, like blocks do in a blockchain. Merkle-DAGs are easy to verify and synchronize between
-				devices, while also offering a versatile representation to application-level protocol designers. Gossip and
-				synchronization protocols, running over a mesh network overlay, can be customized by applications both 
-				to restrict access to the resulting DAG and to enforce application-specific validation rules. The resulting
-				optimistic replication of application-defined DAGs fullfills a similar unifying role to the one packet-switching 
-				had in the design of the Internet.</p>
-
-				<p>Since the DAGs used by different applications don't need to be disjoint, this model enables new forms of 
-				interoperability. The support chat in a company's e-commerce store could be included inside
-				the workspace collaboration system -if both were based on Hyper Hyper Space- not by using an API but by actually 
-				working on the same data strctures encoded over the DAG. New forms of content linking could be imagined, involving not
-				just unidirectional links but richer interrelations over shared information. Instead of URLs and anchors inside
-				a document, the entire internal structure of an entity as it is represented on the DAG can be referenced from 
-				the outside. The cryptographic hash function used for referencing objects guarantees that this can be done without 
-				unwanted collisions.
-				</p>
-
-				<h4>Information as merkle-DAGs</h4>
-
-				<p>There is a significant mismatch between writing to an append-only immutable DAG and the mutable
-				data structures an application designer may expect. The Hyper Hyper Space offers a data modelling library,
-				currently available for TypeScript and JavaScript environments, and a hash-based key-value store. Datatypes
-				created using the library can be automatically translated into operations over the immutable DAG and saved
-				to the store. Once saved, they can be syncrhonized automatically over the mesh network. A memory
-				backend for transient uses, one backed by IndexedDB for web browsers, and a SQLite-based version for use
-				in NodeJs are included. 
-				</p>
-
-				<p>Storable objects can be constructed using literals (strings, numbers, arrays, dictionaries, etc.) and references to 
-					other objects in the store. These references, however, will also use hashes to identify their targets.</p>
-	
-					<p>In the following example, an object of type <span class="monospace">Message</span> references another of type 
-					<span class="monospace">Identity</span> through its <span class="monospace">author</span> field, using its hash value <span class="monospace light warm green">fa34d0&mldr;</span>:</p>
-	
-					<img class="padding-top padding-bottom" src="img/hello_mom.png">
-					
-					<p>It is easy to see that this representation only works for immutable objects. If Ken changed his name to Kenny, the
-					hash of the <span class="monospace">Identity</span> object would change. All existing references, including the one in the 
-					<span class="monospace">Message</span> object above, would still point to the original version!
-					</p>
-
-					<img class="padding-top padding-bottom" src="img/save_op.png">
-
+				
 				<h4>Spaces</h4>
 			</div>
 		</div>
