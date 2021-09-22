@@ -22,14 +22,15 @@
 	</div>
 	<div class="inner-feature-width">
 		<h2 style="border-bottom: 1px solid;" class="no-margin-bottom padding-left">Hyper Hyper Space</h2>
-		<div class="two-column"><span class="monospace small  padding-left"> by <b>Santiago Bazerque</b></span><span class="text-right padding-right monospace small">21st September <b>2021</b><br>Draft</span></div>
+		<div class="two-column"><span class="monospace small  padding-left"> by <b>Santiago Bazerque</b></span><span class="text-right padding-right monospace small"><b>v1.0</b>, 22nd September <b>2021</b></span></div>
 	</div>
 
 	<div class="inner-feature-width gutter-top" style="display:flex;">
 		
 		<div class="hide mobile padding-left no-padding-bottom" style="width: 25%; flex-shrink: 0">
 			<span class="small monospace"><i>"The network as an <span class="green">Information Mesh</span>. An old goal, not yet achieved."</i>
-				wrote David D. Clark, early Internet pioneer, in <b>1992</b>.
+				wrote David D. Clark, early Internet pioneer, in <b>1992</b>. The situation hasn't changed very much: the Internet Protocols transport
+				data, but are still unaware of its information content.
 			</span>	
 		</div>
 		<div class="padding-left padding-right" style="flex-grow: 4;">
@@ -56,7 +57,7 @@
 	<div class="inner-feature-width" style="display:flex;">
 		<div class="hide mobile padding-left no-padding-bottom" style="width: 25%; flex-shrink: 0">
 			<span class="small monospace"><a href="https://www.hyperhyperspace.org">Hyper Hyper Space</a> is able 
-				to run a <span class="base-color">peer-to-peer app</span> inside an
+				to run a full <span class="base-color">peer-to-peer</span> application inside an
 				<span class="red">unmodified web browser</span>.
 			</span>
 		</div>
@@ -66,7 +67,7 @@
 
 
 				<p>To make these new distributed, interoperable applications universally available, a JavaScript 
-				implementation of the Hyper Hyper Space protocol stack has been adapted to run inside a 
+				implementation of the Hyper Hyper Space protocol stack [<a class="monospace" href="https://github.com/hyperhyperspace/hyperhyperspace-core">source</a>] has been adapted to run inside a 
 				modern web browser, using IndexedDB for persistence and WebRTC as transport. This enables a regular
 				website to work as a web-based peer, creating a local database <b>inside</b> the browser that is then 
 				synchronized automatically using a peer-to-peer network overlay.
@@ -96,7 +97,7 @@
 	<div class="inner-feature-width" style="display:flex;">
 		<div class="hide mobile padding-left no-padding-bottom" style="width: 25%; flex-shrink: 0">
 			<span class="small monospace">Just like references to an object within a single computer can be created by taking its memory 
-				address (say in the <i>C programming language</i> model), peers on a <i>hyper hyper space</i> can reference an object by using its <span class="base-color">hash</span>.
+				address (say in the <i>C programming language</i> model), peers on a <i>hyper hyper space</i> can reference an object by using its <span class="base-color">hash</span>. Instead of dereferencing a memory address, in the second case an object with the given hash must be found through the mesh network.
 			</span>
 		</div>
 		<div class="padding-left padding-right" style="flex-grow: 4;">
@@ -217,7 +218,7 @@
 				<p>This problem is mitigated by introducing causal relationships between operations, enabling
 				application designers to indicate that an operation is causally dependent on the validity of another. 
 				The example below uses the class <span class="monospace">CapabilitySet</span> from Hyper Hyper Space's
-				datatype library. It is similar to <span class="monospace">MutableSet</span>, but instead
+				standard library. It is similar to <span class="monospace">MutableSet</span>, but instead
 				of inserting and deleting elements, capabilities are granted, used and revoked. Causal relationships 
 				are shown in <span class="green">green</span>:
 				</p>
@@ -268,7 +269,7 @@
 
 				<h4>Sinchronization</h4>
 
-				<p>During normal operation, applications operate on the local store, that holds a copy of the state-DAT.
+				<p>During normal operation, applications operate on the local store, that holds a copy of the state-DAG.
 				In order to mantain its contents in sync with other peers, the application configures Hyper Hyper Space's 
 				mesh network and indicates which mutable objects (that are specially labelled in the DAG) need to be kept 
 				synchronized.</p>
@@ -303,8 +304,7 @@
 				messages must be sent (e.g. if a peer is on a cellullar network and its IP address is changing).
 				</p>
 				
-				<p>The application also provides a peer 
-				group for each object. If the application uses a significant amount of data, it may selectively activate and 
+				<p>If the application uses a significant amount of data, it may selectively activate and 
 				deactivate synchronization of objects as they are needed.
 				</p>
 
@@ -319,7 +319,7 @@
 
 				<h6>Mesh Network</h6>
 
-				<p>Peers in the network form application-defined groups over which mutable objects may be synchronized. The 
+				<p>Peers in the network form application-defined groups over which mutable objects are synchronized. The 
 				method for obtaining peers is also application defined: it may be a peer set kept in the DAG-state of
 				the app, an external source (a torrent file or similar) and finally the signalling 
 				servers support piggybacking messages to obtain a list of bootstrapping peers. Each peer connects to 
@@ -329,12 +329,13 @@
 				<h6>Gossip &amp; Synchronization</h6>
 
 				<p>Each peer group implements an epidemic gossip protocol where each peer informs which objects they are
-				synchronizing, and which state they are in. Object state is determined by taking the set of operations that 
+				synchronizing, and the state they are in. Object state is determined by taking the set of operations that 
 				are maximal in the operation history, using the <span class="monospace">prev</span> partial order.
 				</p>
 
-				<p>Whenever gossip reveals an objects to be in tow different states, a syncrhonization is performed. Sync starts 
-				by peers requesting the headers of the operation history they are missing, and then requesting the actual
+				<p>Whenever gossip reveals an object to be in two different states, a syncrhonization is performed. Sync starts 
+				by peers requesting the headers of the operation history they are missing, and then using that information to 
+				request the actual
 				operations they need to fetch. The sync protocol is optimized to reduce round trips. It attempts to deduce
 				which operations will be requested, and starts streaming them back as soon as it can infer they are needed.
 				The receiving peer can send further messages to correct what he is getting.
@@ -342,26 +343,117 @@
 
 				<h4>Spaces</h4>
 
-				<p>On the Internet, IP addresses are the network-independent identifiers that enable universal connectivity.
-				Similarly, Hyper Hyper Space introduces an application-independent representation for information objects: <i>Spaces</i>.
-				A space may contain a chat room, a discussion forum, an e-commerce store, a blog, etc.
-				</p>
-
-				<p>Spaces are universally accessible using <span style="border-bottom: 1px dotted" title="If the system gains popularity, we may need 4-word codes!">3-word codes</span>.
-				When ownership and access restrictions are necessary, Spaces use Hyper Hyper Space native cryptographic identities, that can be exported from one application to another,
-				to authenticate peers.
-				</p>
-				
-				<p>As an example, here is a <a href="https://hyperhyper.space/chat-window" target="_blank">demo chat system</a> based on Hyper Hyper Space. Each
-				chat room is a space, and has its own 3-word code. The page is static, and the contents of each chat room are synchronized between participants 
-				browser-to-browser. If you copy the page and host it elsewhere (or locally on your own computer), everthing would work exactly the same.
-				</p>
-
-				<p>Websites may be used to look up spaces like in the example above. Spaces can also be <b>embedded using iFrames</b>, and a website may
-				also pin down and load a fixed space, providing an experience similar to a <b>regular page</b>.
-				</p>
 			</div>
 		</div>
+	</div>
+	<div class="inner-feature-width" style="display:flex;">
+		<div class="hide mobile padding-left no-padding-bottom" style="width: 25%; flex-shrink: 0">
+			<span class="small monospace"> The role of <i class="yellow">spaces</i> in <a href="https://www.hyperhyperspace.org">Hyper Hyper Space</a> is 
+				somewhat similar to that of files on personal computers, URLs on the web, etc.
+			</span>
+		</div>
+		<div class="padding-left padding-right" style="flex-grow: 4;">
+			<div class="page-width">
+
+				<p>On the Internet, IP addresses are the network-independent identifiers that enable universal connectivity.
+				Similarly, Hyper Hyper Space introduces an application-independent addressing mechanism for top-level information objects: <i>Spaces</i>.
+				A space designates an object inside the application state-DAG, called its <i>entry point</i>. The type of this entry object
+				defines the type of content in the space: a chat room, a discussion forum, an e-commerce store, a blog, etc.
+				</p>
+				
+				<p>Spaces are <b>universally accessible</b> using <span style="border-bottom: 1px dotted" title="If the system gains popularity, 4-word codes may be necessary. Each word encodes 12 bits of information.">3-word codes</span>,
+				that encode a suffix of the entry point object's hash. In the current implementation, universal lookup is based on the
+				peer discovery mechanism that reuses signalling server connections.
+				</p>
+
+				<p>As a working example, we have created a naive chat room implementation [<a class="monospace" href="https://github.com/hyperhyperspace/p2p-chat">source</a>] that works as 
+				a space. Its entry point object has type <span class="monospace">ChatRoom</span>, and contains a title and a 
+				<span class="monospace">MutableSet</span> that will hold the messages:</p>
+
+				<div class="text-trim padding-right padding-bottom">
+					<div class="dull white text-padding">
+						<span class="monospace">
+							class ChatRoom {<br>
+							<br>
+							&nbsp;&nbsp;title: string;<br>
+							&nbsp;&nbsp;messages: MutableSet&lt;Message&gt;;<br>
+							&nbsp;&nbsp;...<br>
+							<br>
+							&nbsp;&nbsp;say(text: string, author: Identity) {<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;let m = new Message();<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;m.text = text;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;m.author = author;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;m.timestamp = Date.now();<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;this.messages.add(m);<br>
+							&nbsp;&nbsp;}
+						</span>
+					</div>
+				</div>
+
+				<p class="no-margin-bottom">Information will be laid out as a DAG, as usual:</p>
+
+				<div class="margin-auto padding">
+					<img src="img/space.png">
+					<div class="margin-text text-center">DAG-state of ChatRoom 'friends of happiness', with a single message from Ken.</div>
+			  	</div>
+				
+				<p>The 36 bit suffix of the entry object hash <span class="orange monospace">0bd551&mldr;</span> has been encoded as the 3-word 
+				code <span class="orange monospace">kind earth trophy</span>.
+				
+				<p>A client, presented with a 3-word code, will fetch the top-level object of type <span class="monospace">ChatRoom</span>
+				using the universal lookup mechanism (locating an object whose hash matches the 36-bit suffix indicated by
+				the words). The rest of the chat contents will then be syncrhonized using Hyper Hyper Space's mesh (in this case, only the 
+				<span class="monospace">MutableSet</span> that holds the messages).</p>
+
+				<p>In a more realistic scenario, the set of users that have joined the room, who the admins are, content moderation, etc. could be 
+				modelled using the causal relationships and the <i>InvalidateAfter</i> construction. Notice that there's no need 
+				to define a specific protocol for the behaviour of the room: everything follows from the type definitions and validation 
+				functions (not shown above for brevity) and Hyper Hyper Space's DAG-based sync.
+				</p>
+
+				<p>We've implemented two clients for this simple chat backend: a console-based one [<a class="monospace" href="https://github.com/hyperhyperspace/p2p-chat-cli">source</a>] 
+				and one using a static page and Hyper Hyper Space's in-browser stack [<a class="monospace" href="https://github.com/hyperhyperspace/p2p-chat-web">source</a>], [<a class="monospace" href="https://hyperhyper.space/chat-window">demo</a>]. 
+				They are interoperable. In order to join a chat room, at least one participant must be online.</p>
+				
+				<p>Websites may be used to look up spaces like in the chat example, using 3-word codes or full hashes. Spaces can also be <b>embedded using iFrames</b>, and a website may
+				also pin down and load a fixed space, providing an experience similar to a <b>regular page</b>.
+				</p>
+
+				<h4>Interoperability</h4>
+
+				<p>When creating new clients for a given application, as long as the data model definitions are respected 
+				(they could be factored into a library, like in the naive chat example) all previously created information 
+				is immediately accessible. A device using the new client can just synchronize its contents using the mesh.</p>
+
+				<p>Furthermore, since all object references are hash-based, and the cryptographic hash function guarantees that 
+				no unwanted collisions should occur,
+				different applications can be integrated by sharing portions of their state-DAGs. For example, an e-commerce 
+				storefront could integrate its chat support channels directly with the company's workspace collaboration system - 
+				by having the same objects in both DAGs. Instead of defining a communication interface using an API, they would 
+				be agreeing on the same distributed datatypes and using Hyper Hyper Space's sync to modify the same state.
+				</p>
+
+				<h4>Future plans</h4>
+
+				<p>This project is work in progress. Join us at:
+
+				<div class="padding-left">
+				<span class="monospace">Github: <a target="_blank" href="https://github.com/hyperhyperspace">https://github.com/hyperhyperspace</a><br>
+					Discord: <a target="_blank" href="https://discord.gg/9epr3XrRnW">invite</a><br>
+					HHS-based chat demo: <a target="_blank" href="https://hyperhyper.space/chat-window/#/room/en/suburb-suburb-awake">suburb suburb awake</a>
+				</span>
+				</div>
+				</p>
+
+				<p>You can also visit <a href="https://www.hyperhyperspace.org">Hyper Hyper Space's homepage</a> or drop as an email at <a href="hello@hyperhyperspace.org">hello@hyperhyperspace.org</a></p>				
+
+				<p>Thanks!</p>
+			</div>
+		</div>
+	</div>
+	<div style="border-top: 1px solid;" class="bar inner-feature-width gutter-top">
+		&nbsp;
 	</div>
 </body>
 </html>
