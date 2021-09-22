@@ -27,9 +27,12 @@
 
 	<div class="inner-feature-width gutter-top" style="display:flex;">
 		
-		<div class="hide mobile no-padding-bottom" style="width: 25%;">
+		<div class="hide mobile padding-left no-padding-bottom" style="width: 25%; flex-shrink: 0">
+			<span class="small monospace"><i>"The network as an <span class="green">Information Mesh</span>. An old goal, not yet achieved."</i>
+				wrote David D. Clark, early Internet pioneer, in <b>1992</b>.
+			</span>	
 		</div>
-		<div class="padding-left" style="flex-grow: 4;">
+		<div class="padding-left padding-right" style="flex-grow: 4;">
 			<div class="page-width">
 				<p>On the Internet, every ISP offers access to the entire network: the Internet Protocols enable 
 				<i>universal connectivity</i>. This property does not hold, however, for the information stored 
@@ -38,14 +41,29 @@
 				application interoperability. 
 				</p>
 
+				
 				<p>Building upon the Internet's universal connectivity premise, the Hyper Hyper Space project
-				proposes a framework for <i>universal information access</i>. Under the proposed model, applications
-				don't use the client-server model, with the client using APIs to perform application functions, but a 
-				fully distributed one, in which all applications use a standardized information representation
-				based on immutable Merkle-DAGs. The framework provides building blocks
-				for the creation of reusable open formats, from which secure distributed data structures can be
-				derived. The end result simplifies the creation of peer-to-peer information systems and improves
-				application interoperability.
+					proposes a framework for <i>universal information access</i>. Under the proposed model, applications
+					don't use the client-server model, with the client using APIs to perform application functions, but a 
+					fully distributed one, in which all applications use a standardized information representation
+					based on immutable Merkle-DAGs. The framework provides building blocks
+					for the creation of reusable open formats, from which secure distributed data structures can be
+					derived. The end result simplifies the creation of peer-to-peer, eventually consistent information 
+					systems and improves application interoperability.</p>
+			</div>
+		</div>
+	</div>
+	<div class="inner-feature-width" style="display:flex;">
+		<div class="hide mobile padding-left no-padding-bottom" style="width: 25%; flex-shrink: 0">
+			<span class="small monospace"><a href="https://www.hyperhyperspace.org">Hyper Hyper Space</a> is able 
+				to run a <span class="base-color">peer-to-peer app</span> inside an
+				<span class="red">unmodified web browser</span>.
+			</span>
+		</div>
+		<div class="padding-left padding-right" style="flex-grow: 4;">
+			<div class="page-width">
+		
+
 
 				<p>To make these new distributed, interoperable applications universally available, a JavaScript 
 				implementation of the Hyper Hyper Space protocol stack has been adapted to run inside a 
@@ -56,7 +74,7 @@
 
 				<h4>Information as Merkle-DAGs</h4>
 
-				<p>Just like the Internet Protocol uses a simplistic network definition (optimistic delivery 
+				<p>Just like the Internet Protocol uses a simple network abstraction (optimistic delivery 
 				of discrete packages) to build its network interconnection capabilities, Hyper Hyper Space-based 
 				applications use a single data structure to represent information: an <b>immutable, append-only 
 				Merkle-DAG</b>. This is a generalization of the model used 
@@ -67,16 +85,29 @@
 				accross devices and verified efficently. It forms the basis of Hyper Hyper Space's interoperability 
 				capabilities.</p>
 
-				<h5>Data Model</h5>
+				<h6>Data Model</h6>
 
 				<p>There is a significant mismatch between writing to an append-only immutable DAG and the 
-				data structures an application designer may expect. In the Hyper Hyper Space data model, each
-				object defined by the application is mapped into a JSON literal and hashed. The resulting 
-				&lt;hash, literal&gt; pair is then appended to the application's DAG. While primitive data types are 
-				mapped to JSON verbatim, refrences to other objects are transformed into <b>hash-based references</b> that form
-				arcs in the graph:
+				data structures an application designer may expect. In the following sections the techniques used 
+				to represent application state are explored.</p>
+			</div>
+		</div>
+	</div>
+	<div class="inner-feature-width" style="display:flex;">
+		<div class="hide mobile padding-left no-padding-bottom" style="width: 25%; flex-shrink: 0">
+			<span class="small monospace">Just like references to an object within a single computer can be created by taking its memory 
+				address (say in the <i>C programming language</i> model), peers on a <i>hyper hyper space</i> can reference an object by using its <span class="base-color">hash</span>.
+			</span>
+		</div>
+		<div class="padding-left padding-right" style="flex-grow: 4;">
+			<div class="page-width">
 
-				<div class="text-trim">
+				<p>In the Hyper Hyper Space data model, each object created by the application is mapped into a JSON literal and 
+				then hashed. The resulting &lt;hash, literal&gt; pair is then appended to the application's DAG.  While primitive 
+				data types are mapped to JSON verbatim, refrences to other objects are transformed into <b>hash-based references</b> 
+				that form arcs in the graph:
+
+				<div class="text-trim padding-right">
 					<div class="dull white text-padding">
 						<span class="monospace">
 							let ken = new Identity('Ken', keypair);<br>
@@ -85,6 +116,8 @@
 							m.text = 'hello Mom'<br>
 							m.timestamp = Date.now();<br>
 							m.author = ken;<br>
+							<br>
+							store.save(m);<br>
 						</span>
 					</div>
 				</div>
@@ -94,13 +127,13 @@
 				<p>When one an object is replicated from one peer to another, its references are identified and sent
 				automatically. All objects are typed, and each application informs the set of datatypes that it will
 				accept. Types come equipped with a validation function that will be used by the replication layer 
-				to accept or reject received additions to the local copy of the DAG.
+				to accept or reject received additions to the local copy of the state-DAG.
 				</p>
 
-				<h5>Mutability</h5>
+				<h6>Mutability</h6>
 
 				<p>Mutable objects are represented using <b>operation-based datatypes</b>. A mutable object is appended to
-				the DAG in a definied initial state, and later changes are represented as mutation objects that
+				the DAG in a defined initial state, and later changes are represented as mutation objects that
 				reference it. Since when replicating a mutable object all the mutations must be replicated as well,
 				both are labelled as such in the DAG.</p>
 				
@@ -109,13 +142,15 @@
 				object created above is inserted into a <span class="monospace">MutableSet</span>:
 				</p>
 
-				<div class="text-trim">
+				<div class="text-trim padding-right">
 					<div class="dull white text-padding">
 						<span class="monospace">
 							let m = new Message();<br>
 							...<br>
 							let s = new MutableSet();<br>
 							s.add(m);<br>
+							<br>
+							store.save(s);<br>
 						</span>
 					</div>
 				</div>
@@ -132,14 +167,17 @@
 				make them unique. 	
 				</p>
 
-				<p>Operations also include a <span class="monospace">prev</span> field that references to the most 
-				recent mutations that have been accepted in the local DAG. In the following example, a series of
+				<p>Operations also include a <span class="monospace">prev</span> field that references the most 
+				recent mutations that have been accepted to the local DAG. In the following example, a series of
 				operations on an observed-remove set have been executed serially on a peer. The vertical arrows
 				indicate the <span class="monospace">prev</span> relationship, while the <span class="monospace">DeleteOp</span>
 				object has an additional blue arrow pointing to the additions that are being cancelled:
 				</p>
 
-				<img class="padding" src="img/mut_set.png">
+				<div class="margin-auto padding">
+					<img  src="img/mut_set.png">
+					<div class="margin-text text-center">Hashes not shown for readability, arrows represent hash-based references.</div>
+				</div>
 
 				<p>When an object is modified concurrently by several peers, <span class="monospace">prev</span> doesn't
 				guarantee that all operations will reach peers in the same order. Mutable datatypes need to	ensure 
@@ -147,37 +185,162 @@
 				Below we see how two peers, Ken and Mary, have concurrently added some elements to a set. Later on
 				a synchronization occurs, and finally Ken adds a last element:</p>
 
-				<img class="padding" src="img/mut_set_concurrent.png">
+				<div class="margin-auto padding">
+					<img class="padding" src="img/mut_set_concurrent.png">
+				</div>
+
+				<p>After the synchronization, Ken's local version of the DAG includes Mary's update, and that is 
+				reflected by his next operation having two predecessors (the last of Ken's previous updates, and 
+				Mary's).</p>
 
 				<p>When comparing the state of a mutable object in two different replicas, the <span class="monospace">prev</span>
 				relationship allows peers to quickly determine if both replicas have the same set of operations, if one replica
-				supercedes the other, or if they are in divergent states, usually within a single round-trip.
+				supersedes the other, or if they are in divergent states, usually within a single round-trip.
 				</p>
 
-			</div>
-		</div>
-	</div>
-	<div class="inner-feature-width gutter-top grid gap-border-width">
-		<div class="grid-width-three hide mobile no-padding-bottom text-trim" style="border-top: 1px solid">
-			<span class="small monospace"><a href="https://www.hyperhyperspace.org">Hyper Hyper Space</a> is a 
-			novel <span class="base-color">information interoperability</span> technology stack that runs a full peer in any 
-			<span class="red">unmodified modern browser</span>, creating a browser-to-browser mesh network and 
-			solving the distribution problem for dapps.
-			</span>
-		</div>
-		<div class="grid-width-nine padding-left">
-			<div class="page-width">
+				<h6>Pseudo-finality</h6>
+
+				<p>Since peers may work over intermittent connections or while being offline, new mutation operations 
+				may appear with arbitrary large delays, and therefore arbitrarily far away from the current state in 
+				terms of the <i>hops</i> defined by the <span class="monospace">prev</span> relationship described above.
+				This prevents applications from enforcing a state change that is <i>final</i> across all peers.
+				</p>
+				<p>
+				For example, if the application needs some form of user capability system,
+				and capabilities can be granted and revoked, a revoked capability may still be used if, either because
+				of propagation delays or malicious intentions, new operations are inserted far back in the object's
+				history (when the capability was still valid). To preserve operation commutativity, these untimely 
+				capability uses would need to be accepted, hence preventing the application from truly enforcing 
+				capability revocation.
+			  	</p>
+
+				<p>This problem is mitigated by introducing causal relationships between operations, enabling
+				application designers to indicate that an operation is causally dependent on the validity of another. 
+				The example below uses the class <span class="monospace">CapabilitySet</span> from Hyper Hyper Space's
+				datatype library. It is similar to <span class="monospace">MutableSet</span>, but instead
+				of inserting and deleting elements, capabilities are granted, used and revoked. Causal relationships 
+				are shown in <span class="green">green</span>:
+				</p>
+
+				<div class="margin-auto padding">
+			  		<img class="margin-auto" src="img/grant_admin.png">
+				</div>
+
+				<p>
+				In the DAG fragment shown above, John was granted Admin rights and used them to perform <span class="monospace">SomeAdminOp</span>,
+				which is a mutation on another object. The green causal arrows show that <span class="monospace">SomeAdminOp</span> is dependent on
+				a <span class="monospace">UseCapabilityOp</span>, which itself depends on the <span class="monospace">GrantCapabilityOp</span>
+				that made John an admin.
+				</p>
+
+				<p>To revoke Admin rights, we will use a <span class="monospace">RevokeCapabilityOp</span>, which will be a special <i>InvalidateAfter</i>
+				type of operation.</p>
+
+				<div class="margin-auto padding">
+					<img class="margin-auto" src="img/revoke_admin.png">
+			  	</div>
+
+				<p>The role of <i>InvalidateAfter</i>-type operations is preventing any further causal consequences of the 
+				invalidated operation after that point in history (the partial order defined by the <span class="monospace">prev</span>
+				relationship, indicated by the black arrows). Note that all the <span class="monospace">UseCapabilityOp</span>
+				operations are inside the history graph for the <span class="monospace">CapabilitySet</span> object, independently
+				of the object in wich the capability is effectively being used (indicated by the green causal references). If 
+				new operations with causal dependencies on the invalidated operation appear outside of the history fragment 
+				that lays before the <i>InvalidateAfter</i> operation (<span class="monospace">RevokeCapabilityOp</span> in our example),
+				they will be automatically undone by the local store. This will be done by automatically appending an special 
+				<span class="monospace">UndoOp</span> to the graph:
+
+				<div class="margin-auto padding">
+					<img class="margin-auto" src="img/undo_op.png">
+			  	</div>
+
+				<p>Undos are created by the local store whenever an operation is causally dependent on another that
+				has been invalidated at that point in history, and are cascaded automatically (in the example above, the 
+				undo will be cascaded to any operations that depend on that use of the Admin capability). Sometimes an undone
+				op needs to be redone (because the <i>InvalidateAfter</i> op that caused it had its own causal dependencies, that
+				were undone as well). This is also done automatically by the store.</p>
+
+				<p>While the tools just described do not provide a real finality solution,
+				because <i>InvalidateAfter</i>-type ops are still prone to causing problems when delayed or purposefully
+				ill-constructed, the combination of <i>InvalidateAfter</i> and <i>Undo</i> gives application designers a
+				way to mitigate its consequences by limiting by construction which patological cases may actually arise.
+				</p>
+
+				<h4>Sinchronization</h4>
+
+				<p>During normal operation, applications operate on the local store, that holds a copy of the state-DAT.
+				In order to mantain its contents in sync with other peers, the application configures Hyper Hyper Space's 
+				mesh network and indicates which mutable objects (that are specially labelled in the DAG) need to be kept 
+				synchronized.</p>
 				
+				<h6>Transport Layer &amp; Signalling</h6>
+
+				<p>Hyper Hyper Space uses WebRTC and WebSockets as its transport protocols.</p>
+
+				<p>WebRTC browser-to-browser connections cannot be established without a signalling server, that helps both ends
+				negotiate connection parameters. This set-up has been adapted to work in a distributed setting by allowing
+				each peer to have his own signalling server. The web client keeps a WebSocket connection permantly open to
+				its signalling server, that will relay any connection establishment messages it receives back to the browser.</p>
+
+				<p>To build the bi-directional channel needed to establish a WebRTC connection, a web client will open a second
+				WebSocket to the signalling server used by the destination peer, that must be known beforehand, like this:</p>
+
+				<div class="margin-auto padding">
+					<img src="img/signalling.png">
+					<div class="margin-text text-center">Peer A initiates WebRTC connection establishment with Peer B. Dotted lines represent WebSocket connections.</div>
+			  	</div>
+
+				<p>If it wants to accept the connection, Peer B will also connect to Peer A's signalling server to be able to send 
+				his own connection establishment messages back to Peer A. Once the WebRTC is ready, both peers can drop the
+				WebSocket connection to the other's signalling server:</p>
+
+
+				<div class="margin-auto padding">
+					<img src="img/webrtc.png">
+			  	</div>
+
+				<p>The connection to the other peer's signalling server may be reopened if further connection management 
+				messages must be sent (e.g. if a peer is on a cellullar network and its IP address is changing).
+				</p>
+				
+				<p>The application also provides a peer 
+				group for each object. If the application uses a significant amount of data, it may selectively activate and 
+				deactivate synchronization of objects as they are needed.
+				</p>
+
+				<p>Signalling servers need not be exclusive to a single peer. Thery are used very lightly and can be 
+				safely shared. In the future, signalling servers may use a DHT to free peers from having to know the 
+				signalling server another peer is using in order to establish a connection.
+				</p>
+
+				<p>Peers running in native environments may use WebSockets directly, if they are available, instead of
+				WebRTC connections.
+				</p>
+
+				<h6>Mesh Network</h6>
+
+				<p>Peers in the network form application-defined groups over which mutable objects may be synchronized. The 
+				method for obtaining peers is also application defined: it may be a peer set kept in the DAG-state of
+				the app, an external source (a torrent file or similar) and finally the signalling 
+				servers support piggybacking messages to obtain a list of bootstrapping peers. Each peer connects to 
+				N random peers in the group. N should be chosen by the application to ensure with high probability that 
+				the resulting network overlay topology inculdes a spanning tree.</p>
+
+				<h6>Gossip &amp; Synchronization</h6>
+
+				<p>Each peer group implements an epidemic gossip protocol where each peer informs which objects they are
+				synchronizing, and which state they are in. Object state is determined by taking the set of operations that 
+				are maximal in the operation history, using the <span class="monospace">prev</span> partial order.
+				</p>
+
+				<p>Whenever gossip reveals an objects to be in tow different states, a syncrhonization is performed. Sync starts 
+				by peers requesting the headers of the operation history they are missing, and then requesting the actual
+				operations they need to fetch. The sync protocol is optimized to reduce round trips. It attempts to deduce
+				which operations will be requested, and starts streaming them back as soon as it can infer they are needed.
+				The receiving peer can send further messages to correct what he is getting.
+				</p>
+
 				<h4>Spaces</h4>
-			</div>
-		</div>
-		<div class="grid-width-three hide mobile text-trim" style="border-top: 1px solid">
-			<span class="small monospace">Look up the space <span class="green">suburb suburb awake</span> in the  <a href="https://hyperhyper.space/chat-window" target="_blank">chat system example</a>
-			to discuss this White Paper!
-			</span>
-		</div>
-		<div class="grid-width-nine padding-left">
-			<div class="page-width">
 
 				<p>On the Internet, IP addresses are the network-independent identifiers that enable universal connectivity.
 				Similarly, Hyper Hyper Space introduces an application-independent representation for information objects: <i>Spaces</i>.
@@ -197,67 +360,8 @@
 				<p>Websites may be used to look up spaces like in the example above. Spaces can also be <b>embedded using iFrames</b>, and a website may
 				also pin down and load a fixed space, providing an experience similar to a <b>regular page</b>.
 				</p>
-
-				
 			</div>
 		</div>
-		<div class="grid-width-three hide mobile text-trim" style="border-top: 1px solid">
-			<span class="small monospace">Look up the space <span class="green">suburb suburb awake</span> in the  <a href="https://hyperhyper.space/chat-window" target="_blank">chat system example</a>
-			to discuss this White Paper!
-			</span>
-		</div>
-		<div class="grid-width-nine padding-left">
-			<div class="page-width">
-
-
-				
-			</div>
-		</div>
-		<div class="grid-width-three hide mobile text-trim" style="border-top: 1px solid">
-			<span class="small monospace">The <a href="https://www.hyperhyperspace.org">Hyper Hyper Space</a> protocols 
-			apply the Internet's <span class="base-color">end-to-end principle</span> to the design of 
-			<i>information systems</i>.
-			</span>
-		</div>
-		<div class="grid-width-nine padding-left">
-			<div class="page-width">
-
-				
-			</div>
-		</div>
-		<div class="grid-width-three hide mobile text-trim" style="border-top: 1px solid">
-			<span class="small monospace">As peers communicate <span class="yellow">exclusively over the shared merkle-DAG</span>,
-			many of the challenges of distributed computing are encapsulated.
-			</span>
-		</div>
-		<div class="grid-width-nine padding-left">
-			<div class="page-width">
-				
-				
-			</div>
-		</div>
-		<div class="grid-width-three hide mobile text-trim" style="border-top: 1px solid">
-			<span class="small monospace">Just like references to an object within a single computer can be created by taking its memory 
-			address (say in the <i>C programming language</i> model), peers in a <i>space</i> can reference an object by using its <span class="base-color">hash</span>.
-			</span>
-		</div>
-		<div class="grid-width-nine padding-left">
-			<div class="page-width">
-
-
-			</div>
-		</div>
-		<div class="grid-width-three hide mobile no-padding-bottom text-trim" style="border-top: 1px solid">
-			<span class="small monospace"><a href="https://www.hyperhyperspace.org">Hyper Hyper Space</a> is the 
-			first <span class="base-color">Web 3</span> technology that runs a full peer in any 
-			<span class="red">unmodified modern browser</span>, solving the distribution problem for dapps.
-			</span>
-		</div>
-		
-
 	</div>
-
-
-
 </body>
 </html>
