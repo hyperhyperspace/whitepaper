@@ -1,40 +1,36 @@
-<!doctype html>
-
-<html lang="en">
-<head>
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
 
 	<title>Hyper Hyper Space</title>
 	<meta name="description" content="The Hyper Hyper Space is a browser-based p2p framework for application interoperability">
 	<meta name="author" content="Santiago Bazerque">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="cavepaint.css">
-	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+	<link rel="shortcut icon" type="image/x-icon" href="https://www.hyperhyperspace.org/favicon.ico">
 </head>
 
 <body class="light white">
 
-	<nav class="bar text-padding no-underlines inner-feature-width">
-		<a href="https://www.hyperhyperspace.org"><img src="img/HHS_Logo_small.png" alt="Hyper Hyper Space" class="padding-left padding-top"></a>
+	<nav class="inner-page-width padding">
+		<a href="https://www.hyperhyperspace.org/" class="no-underline"><img src="img/HHS_Logo_small.png" alt="Hyper Hyper Space" class="padding-left padding-top"></a>
 	</nav>
-	<div style="border-top: 1px solid; border-bottom: 1px solid;" class="bar inner-feature-width">
+	<div class="bar inner-page-width padding no-padding-top no-padding-bottom border-top border-bottom white">
 		<span class="padding monospace">White Paper</span>
 	</div>
-	<div class="inner-feature-width">
-		<h2 style="border-bottom: 1px solid;" class="no-margin-bottom padding-left">Hyper Hyper Space</h2>
-		<div class="two-column"><span class="monospace small  padding-left"> by <a href="mailto:santi@hyperhyperspace.org"><b>Santiago Bazerque</b></a></span><span class="text-right padding-right monospace small"><b>v1.0</b>, 22nd September <b>2021</b></span></div>
+	<div class="inner-page-width padding">
+		<h2 class="text-margin-bottom padding-left border-bottom sans-serif">Hyper Hyper Space</h2>
+		<div class="two-column tablet"><span class="monospace small  padding-left"> by <a href="mailto:santi@hyperhyperspace.org"><b>Santiago Bazerque</b></a></span><span class="text-right padding-right monospace small"><b>v1.0</b>, 22nd September <b>2021</b></span></div>
 	</div>
 
-	<div class="inner-feature-width gutter-top" style="display:flex;">
+	<div class="inner-page-width padding two-column golden reverse desktop gap-gutter gutter-top">
 		
-		<div class="hide mobile padding-left no-padding-bottom" style="width: 25%; flex-shrink: 0">
-			<span class="small monospace"><i>"The network as an <span class="green">Information Mesh</span>. An old goal, not yet achieved."</i>
+		<div class="inner-text-width text-crunch small gutter no-margin-top">
+				<i>"The network as an <span class="text-color green shade bold">Information&nbsp;Mesh</span>. An old goal, not yet achieved."</i>
 				wrote David D. Clark, early Internet pioneer, in <b>1992</b>. The situation hasn't changed very much: the Internet Protocols transport
-				data, but are still unaware of its information content.
-			</span>	
+				data, but are still unaware of its information content.			
 		</div>
-		<div class="padding-left padding-right" style="flex-grow: 4;">
-			<div class="page-width">
+		<div class="inner-text-width">
 				<p>On the Internet, every ISP offers access to the entire network: the Internet Protocols enable 
 				<i>universal connectivity</i>. This property does not hold, however, for the information stored 
 				<i>within</i> each of the platforms and applications we use online. On the contrary, information
@@ -51,18 +47,17 @@
 					for the creation of reusable open formats, from which secure distributed data structures can be
 					derived. The end result simplifies the creation of peer-to-peer, eventually consistent information 
 					systems and improves application interoperability.</p>
-			</div>
 		</div>
 	</div>
-	<div class="inner-feature-width" style="display:flex;">
-		<div class="hide mobile padding-left no-padding-bottom" style="width: 25%; flex-shrink: 0">
-			<span class="small monospace"><a href="https://www.hyperhyperspace.org">Hyper Hyper Space</a> is able 
-				to run a full <span class="base-color">peer-to-peer</span> application inside an
-				<span class="red">unmodified web browser</span>.
+	<div class="inner-page-width padding two-column golden reverse desktop gap-gutter">
+		<div class="inner-text-width text-crunch small gutter no-margin-top text-crunch">
+			<span class="small"><a href="https://www.hyperhyperspace.org/">Hyper Hyper Space</a> is able 
+				to run a full <span class="text-color base-color shade bold">peer-to-peer</span> application inside an
+				<span class="text-color red shade bold">unmodified web browser</span>.
 			</span>
 		</div>
-		<div class="padding-left padding-right" style="flex-grow: 4;">
-			<div class="page-width">
+		<div class="inner-text-width">
+			<div class="">
 		
 
 
@@ -94,366 +89,2556 @@
 			</div>
 		</div>
 	</div>
-	<div class="inner-feature-width" style="display:flex;">
-		<div class="hide mobile padding-left no-padding-bottom" style="width: 25%; flex-shrink: 0">
-			<span class="small monospace">Just like references to an object within a single computer can be created by taking its memory 
-				address (say in the <i>C programming language</i> model), peers on a <i>hyper hyper space</i> can reference an object by using its <span class="base-color">hash</span>. Instead of dereferencing a memory address, in the second case an object with the given hash must be found through the mesh network.
+	<div class="inner-page-width padding two-column golden reverse desktop gap-gutter">
+		<div class="inner-text-width gutter no-margin-top text-crunch small">
+			<span>Just like references to an object within a single computer can be created by taking its memory 
+				address (say in the <i>C&nbsp;programming language</i> model), peers on a <i>hyper hyper space</i> can reference an object by using its <span class="text-color base-color shade bold">hash</span>.
+ Instead of dereferencing a memory address, in the second case an object
+ with the given hash must be found through the mesh network.
 			</span>
 		</div>
-		<div class="padding-left padding-right" style="flex-grow: 4;">
-			<div class="page-width">
+		<div class="inner-text-width">
+			<p>In the Hyper Hyper Space data model, each object created by the application is mapped into a JSON literal and 
+			then hashed. The resulting &lt;hash, literal&gt; pair is then appended to the application's DAG.  While primitive 
+			data types are mapped to JSON verbatim, refrences to other objects are transformed into <b>hash-based references</b> 
+			that form arcs in the graph:
 
-				<p>In the Hyper Hyper Space data model, each object created by the application is mapped into a JSON literal and 
-				then hashed. The resulting &lt;hash, literal&gt; pair is then appended to the application's DAG.  While primitive 
-				data types are mapped to JSON verbatim, refrences to other objects are transformed into <b>hash-based references</b> 
-				that form arcs in the graph:
-
-				<div class="text-trim padding-right">
-					<div class="dull white text-padding">
-						<span class="monospace">
-							let ken = new Identity('Ken', keypair);<br>
-							<br>
-							let m = new Message();<br>
-							m.text = 'hello Mom'<br>
-							m.timestamp = Date.now();<br>
-							m.author = ken;<br>
-							<br>
-							store.save(m);<br>
-						</span>
-					</div>
+			</p><div class="text-trim padding-right">
+				<div class="dull white text-padding">
+					<span class="monospace">
+						let ken = new Identity('Ken', keypair);<br>
+						<br>
+						let m = new Message();<br>
+						m.text = 'hello Mom'<br>
+						m.timestamp = Date.now();<br>
+						m.author = ken;<br>
+						<br>
+						store.save(m);<br>
+					</span>
 				</div>
-
-				<img class="padding" src="img/hello_mom.png">
-
-				<p>When one an object is replicated from one peer to another, its references are identified and sent
-				automatically. All objects are typed, and each application informs the set of datatypes that it will
-				accept. Types come equipped with a validation function that will be used by the replication layer 
-				to accept or reject received additions to the local copy of the state-DAG.
-				</p>
-
-				<h6>Mutability</h6>
-
-				<p>Mutable objects are represented using <b>operation-based datatypes</b>. A mutable object is appended to
-				the DAG in a defined initial state, and later changes are represented as mutation objects that
-				reference it. Since when replicating a mutable object all the mutations must be replicated as well,
-				both are labelled as such in the DAG.</p>
-				
-				<p>
-				In the following example, the <span class="monospace">Message</span>
-				object created above is inserted into a <span class="monospace">MutableSet</span>:
-				</p>
-
-				<div class="text-trim padding-right">
-					<div class="dull white text-padding">
-						<span class="monospace">
-							let m = new Message();<br>
-							...<br>
-							let s = new MutableSet();<br>
-							s.add(m);<br>
-							<br>
-							store.save(s);<br>
-						</span>
-					</div>
-				</div>
-				
-				<img class="padding" src="img/save_op.png">
-				
-				
-				<p>The created <span class="monospace">MutableSet</span> object, that initially represents an empty set,
-				includes a random seed in its JSON-like representation. This makes its hash <span class="monospace light warm green">c111fa&mldr;</span>
-				unique. Otherwise, the system would accept a <b>single</b> empty set object, like in the mathematical definition
-				of set theory, where extensional equality makes all empty sets represent the same entity. As operations adding and removing elements from the set are later appended to the DAG, the hash 
-				of the set object itself remains constant and can be safely used to create references in the rest of the model.
-				Operations will usually also include a random nonce, like the <span class="monospace">AddOp</span> above, to
-				make them unique. 	
-				</p>
-
-				<p>Operations also include a <span class="monospace">prev</span> field that references the most 
-				recent mutations that have been accepted to the local DAG. In the following example, a series of
-				operations on an observed-remove set have been executed serially on a peer. The vertical arrows
-				indicate the <span class="monospace">prev</span> relationship, while the <span class="monospace">DeleteOp</span>
-				object has an additional blue arrow pointing to the additions that are being cancelled:
-				</p>
-
-				<div class="margin-auto padding">
-					<img  src="img/mut_set.png">
-					<div class="margin-text text-center">Hashes not shown for readability, arrows represent hash-based references.</div>
-				</div>
-
-				<p>When an object is modified concurrently by several peers, <span class="monospace">prev</span> doesn't
-				guarantee that all operations will reach peers in the same order. Mutable datatypes need to	ensure 
-				convergence, usually by employing commutative operations, following the techniques developed for CRDTs.
-				Below we see how two peers, Ken and Mary, have concurrently added some elements to a set. Later on
-				a synchronization occurs, and finally Ken adds a last element:</p>
-
-				<div class="margin-auto padding">
-					<img class="padding" src="img/mut_set_concurrent.png">
-				</div>
-
-				<p>After the synchronization, Ken's local version of the DAG includes Mary's update, and that is 
-				reflected by his next operation having two predecessors (the last of Ken's previous updates, and 
-				Mary's).</p>
-
-				<p>When comparing the state of a mutable object in two different replicas, the <span class="monospace">prev</span>
-				relationship allows peers to quickly determine if both replicas have the same set of operations, if one replica
-				supersedes the other, or if they are in divergent states, usually within a single round-trip.
-				</p>
-
-				<h6>Pseudo-finality</h6>
-
-				<p>Since peers may work over intermittent connections or while being offline, new mutation operations 
-				may appear with arbitrary large delays, and therefore arbitrarily far away from the current state in 
-				terms of the <i>hops</i> defined by the <span class="monospace">prev</span> relationship described above.
-				This prevents applications from enforcing a state change that is <i>final</i> across all peers.
-				</p>
-				<p>
-				For example, if the application needs some form of user capability system,
-				and capabilities can be granted and revoked, a revoked capability may still be used if, either because
-				of propagation delays or malicious intentions, new operations are inserted far back in the object's
-				history (when the capability was still valid). To preserve operation commutativity, these untimely 
-				capability uses would need to be accepted, hence preventing the application from truly enforcing 
-				capability revocation.
-			  	</p>
-
-				<p>This problem is mitigated by introducing causal relationships between operations, enabling
-				application designers to indicate that an operation is causally dependent on the validity of another. 
-				The example below uses the class <span class="monospace">CapabilitySet</span> from Hyper Hyper Space's
-				standard library. It is similar to <span class="monospace">MutableSet</span>, but instead
-				of inserting and deleting elements, capabilities are granted, used and revoked. Causal relationships 
-				are shown in <span class="green">green</span>:
-				</p>
-
-				<div class="margin-auto padding">
-			  		<img class="margin-auto" src="img/grant_admin.png">
-				</div>
-
-				<p>
-				In the DAG fragment shown above, John was granted Admin rights and used them to perform <span class="monospace">SomeAdminOp</span>,
-				which is a mutation on another object. The green causal arrows show that <span class="monospace">SomeAdminOp</span> is dependent on
-				a <span class="monospace">UseCapabilityOp</span>, which itself depends on the <span class="monospace">GrantCapabilityOp</span>
-				that made John an admin.
-				</p>
-
-				<p>To revoke Admin rights, we will use a <span class="monospace">RevokeCapabilityOp</span>, which will be a special <i>InvalidateAfter</i>
-				type of operation.</p>
-
-				<div class="margin-auto padding">
-					<img class="margin-auto" src="img/revoke_admin.png">
-			  	</div>
-
-				<p>The role of <i>InvalidateAfter</i>-type operations is preventing any further causal consequences of the 
-				invalidated operation after that point in history (the partial order defined by the <span class="monospace">prev</span>
-				relationship, indicated by the black arrows). Note that all the <span class="monospace">UseCapabilityOp</span>
-				operations are inside the history graph for the <span class="monospace">CapabilitySet</span> object, independently
-				of the object in wich the capability is effectively being used (indicated by the green causal references). If 
-				new operations with causal dependencies on the invalidated operation appear outside of the history fragment 
-				that lays before the <i>InvalidateAfter</i> operation (<span class="monospace">RevokeCapabilityOp</span> in our example),
-				they will be automatically undone by the local store. This will be done by automatically appending an special 
-				<span class="monospace">UndoOp</span> to the graph:
-
-				<div class="margin-auto padding">
-					<img class="margin-auto" src="img/undo_op.png">
-			  	</div>
-
-				<p>Undos are created by the local store whenever an operation is causally dependent on another that
-				has been invalidated at that point in history, and are cascaded automatically (in the example above, the 
-				undo will be cascaded to any operations that depend on that use of the Admin capability). Sometimes an undone
-				op needs to be redone (because the <i>InvalidateAfter</i> op that caused it had its own causal dependencies, that
-				were undone as well). This is also done automatically by the store.</p>
-
-				<p>While the tools just described do not provide a real finality solution,
-				because <i>InvalidateAfter</i>-type ops are still prone to causing problems when delayed or purposefully
-				ill-constructed, the combination of <i>InvalidateAfter</i> and <i>Undo</i> gives application designers a
-				way to mitigate its consequences by limiting by construction which patological cases may actually arise.
-				</p>
-
-				<h4>Synchronization</h4>
-
-				<p>During normal operation, applications operate on the local store, that holds a copy of the state-DAG.
-				In order to mantain its contents in sync with other peers, the application configures Hyper Hyper Space's 
-				mesh network and indicates which mutable objects (that are specially labelled in the DAG) need to be kept 
-				synchronized.</p>
-				
-				<h6>Transport Layer &amp; Signalling</h6>
-
-				<p>Hyper Hyper Space uses WebRTC and WebSockets as its transport protocols.</p>
-
-				<p>WebRTC browser-to-browser connections cannot be established without a signalling server, that helps both ends
-				negotiate connection parameters. This set-up has been adapted to work in a distributed setting by allowing
-				each peer to have his own signalling server. The web client keeps a WebSocket connection permantly open to
-				its signalling server, that will relay any connection establishment messages it receives back to the browser.</p>
-
-				<p>To build the bi-directional channel needed to establish a WebRTC connection, a web client will open a second
-				WebSocket to the signalling server used by the destination peer, that must be known beforehand, like this:</p>
-
-				<div class="margin-auto padding">
-					<img src="img/signalling.png">
-					<div class="margin-text text-center">Peer A initiates WebRTC connection establishment with Peer B. Dotted lines represent WebSocket connections.</div>
-			  	</div>
-
-				<p>If it wants to accept the connection, Peer B will also connect to Peer A's signalling server to be able to send 
-				his own connection establishment messages back to Peer A. Once the WebRTC is ready, both peers can drop the
-				WebSocket connection to the other's signalling server:</p>
-
-
-				<div class="margin-auto padding">
-					<img src="img/webrtc.png">
-			  	</div>
-
-				<p>The connection to the other peer's signalling server may be reopened if further connection management 
-				messages must be sent (e.g. if a peer is on a cellullar network and its IP address is changing).
-				</p>
-				
-				<p>If the application uses a significant amount of data, it may selectively activate and 
-				deactivate synchronization of objects as they are needed.
-				</p>
-
-				<p>Signalling servers need not be exclusive to a single peer. Thery are used very lightly and can be 
-				safely shared. In the future, signalling servers may use a DHT to free peers from having to know the 
-				signalling server another peer is using in order to establish a connection.
-				</p>
-
-				<p>Peers running in native environments may use WebSockets directly, if they are available, instead of
-				WebRTC connections.
-				</p>
-
-				<h6>Mesh Network</h6>
-
-				<p>Peers in the network form application-defined groups over which mutable objects are synchronized. The 
-				method for obtaining peers is also application defined: it may be a peer set kept in the DAG-state of
-				the app, an external source (a torrent file or similar) and finally the signalling 
-				servers support piggybacking messages to obtain a list of bootstrapping peers. Each peer connects to 
-				N random peers in the group. N should be chosen by the application to ensure with high probability that 
-				the resulting network overlay topology inculdes a spanning tree.</p>
-
-				<h6>Gossip &amp; Synchronization</h6>
-
-				<p>Each peer group implements an epidemic gossip protocol where each peer informs which objects they are
-				synchronizing, and the state they are in. Object state is determined by taking the set of operations that 
-				are maximal in the operation history, using the <span class="monospace">prev</span> partial order.
-				</p>
-
-				<p>Whenever gossip reveals an object to be in two different states, a syncrhonization is performed. Sync starts 
-				by peers requesting the headers of the operation history they are missing, and then using that information to 
-				request the actual
-				operations they need to fetch. The sync protocol is optimized to reduce round trips. It attempts to deduce
-				which operations will be requested, and starts streaming them back as soon as it can infer they are needed.
-				The receiving peer can send further messages to correct what he is getting.
-				</p>
-
-				<h4>Spaces</h4>
-
 			</div>
+
+			<img class="padding" src="img/hello_mom.png">
+
+			<p>When one an object is replicated from one peer to another, its references are identified and sent
+			automatically. All objects are typed, and each application informs the set of datatypes that it will
+			accept. Types come equipped with a validation function that will be used by the replication layer 
+			to accept or reject received additions to the local copy of the state-DAG.
+			</p>
+
+			<h6>Mutability</h6>
+
+			<p>Mutable objects are represented using <b>operation-based datatypes</b>. A mutable object is appended to
+			the DAG in a defined initial state, and later changes are represented as mutation objects that
+			reference it. Since when replicating a mutable object all the mutations must be replicated as well,
+			both are labelled as such in the DAG.</p>
+			
+			<p>
+			In the following example, the <span class="monospace">Message</span>
+			object created above is inserted into a <span class="monospace">MutableSet</span>:
+			</p>
+
+			<div class="text-trim padding-right">
+				<div class="dull white text-padding">
+					<span class="monospace">
+						let m = new Message();<br>
+						...<br>
+						let s = new MutableSet();<br>
+						s.add(m);<br>
+						<br>
+						store.save(s);<br>
+					</span>
+				</div>
+			</div>
+			
+			<img class="padding" src="img/save_op.png">
+			
+			
+			<p>The created <span class="monospace">MutableSet</span> object, that initially represents an empty set,
+			includes a random seed in its JSON-like representation. This makes its hash <span class="monospace light warm green">c111fa…</span>
+			unique. Otherwise, the system would accept a <b>single</b> empty set
+object, like in the mathematical definition
+			of set theory, where extensional equality makes all empty sets 
+represent the same entity. As operations adding and removing elements 
+from the set are later appended to the DAG, the hash 
+			of the set object itself remains constant and can be safely used to 
+create references in the rest of the model.
+			Operations will usually also include a random nonce, like the <span class="monospace">AddOp</span> above, to
+			make them unique. 	
+			</p>
+
+			<p>Operations also include a <span class="monospace">prev</span> field that references the most 
+			recent mutations that have been accepted to the local DAG. In the following example, a series of
+			operations on an observed-remove set have been executed serially on a peer. The vertical arrows
+			indicate the <span class="monospace">prev</span> relationship, while the <span class="monospace">DeleteOp</span>
+			object has an additional blue arrow pointing to the additions that are being cancelled:
+			</p>
+
+			<div class="margin-auto padding">
+				<img src="img/mut_set.png">
+				<div class="margin-text text-center">Hashes not shown for readability, arrows represent hash-based references.</div>
+			</div>
+
+			<p>When an object is modified concurrently by several peers, <span class="monospace">prev</span> doesn't
+			guarantee that all operations will reach peers in the same order. Mutable datatypes need to	ensure 
+			convergence, usually by employing commutative operations, following the techniques developed for CRDTs.
+			Below we see how two peers, Ken and Mary, have concurrently added some elements to a set. Later on
+			a synchronization occurs, and finally Ken adds a last element:</p>
+
+			<div class="margin-auto padding">
+				<img class="padding" src="img/mut_set_concurrent.png">
+			</div>
+
+			<p>After the synchronization, Ken's local version of the DAG includes Mary's update, and that is 
+			reflected by his next operation having two predecessors (the last of Ken's previous updates, and 
+			Mary's).</p>
+
+			<p>When comparing the state of a mutable object in two different replicas, the <span class="monospace">prev</span>
+			relationship allows peers to quickly determine if both replicas have the same set of operations, if one replica
+			supersedes the other, or if they are in divergent states, usually within a single round-trip.
+			</p>
+
+			<h6>Pseudo-finality</h6>
+
+			<p>Since peers may work over intermittent connections or while being offline, new mutation operations 
+			may appear with arbitrary large delays, and therefore arbitrarily far away from the current state in 
+			terms of the <i>hops</i> defined by the <span class="monospace">prev</span> relationship described above.
+			This prevents applications from enforcing a state change that is <i>final</i> across all peers.
+			</p>
+			<p>
+			For example, if the application needs some form of user capability system,
+			and capabilities can be granted and revoked, a revoked capability may still be used if, either because
+			of propagation delays or malicious intentions, new operations are inserted far back in the object's
+			history (when the capability was still valid). To preserve operation commutativity, these untimely 
+			capability uses would need to be accepted, hence preventing the application from truly enforcing 
+			capability revocation.
+			</p>
+
+			<p>This problem is mitigated by introducing causal relationships between operations, enabling
+			application designers to indicate that an operation is causally dependent on the validity of another. 
+			The example below uses the class <span class="monospace">CapabilitySet</span> from Hyper Hyper Space's
+			standard library. It is similar to <span class="monospace">MutableSet</span>, but instead
+			of inserting and deleting elements, capabilities are granted, used and revoked. Causal relationships 
+			are shown in <span class="green">green</span>:
+			</p>
+
+			<div class="margin-auto padding">
+				<img class="margin-auto" src="img/grant_admin.png">
+			</div>
+
+			<p>
+			In the DAG fragment shown above, John was granted Admin rights and used them to perform <span class="monospace">SomeAdminOp</span>,
+			which is a mutation on another object. The green causal arrows show that <span class="monospace">SomeAdminOp</span> is dependent on
+			a <span class="monospace">UseCapabilityOp</span>, which itself depends on the <span class="monospace">GrantCapabilityOp</span>
+			that made John an admin.
+			</p>
+
+			<p>To revoke Admin rights, we will use a <span class="monospace">RevokeCapabilityOp</span>, which will be a special <i>InvalidateAfter</i>
+			type of operation.</p>
+
+			<div class="margin-auto padding">
+				<img class="margin-auto" src="img/revoke_admin.png">
+			</div>
+
+			<p>The role of <i>InvalidateAfter</i>-type operations is preventing any further causal consequences of the 
+			invalidated operation after that point in history (the partial order defined by the <span class="monospace">prev</span>
+			relationship, indicated by the black arrows). Note that all the <span class="monospace">UseCapabilityOp</span>
+			operations are inside the history graph for the <span class="monospace">CapabilitySet</span> object, independently
+			of the object in wich the capability is effectively being used (indicated by the green causal references). If 
+			new operations with causal dependencies on the invalidated operation appear outside of the history fragment 
+			that lays before the <i>InvalidateAfter</i> operation (<span class="monospace">RevokeCapabilityOp</span> in our example),
+			they will be automatically undone by the local store. This will be done by automatically appending an special 
+			<span class="monospace">UndoOp</span> to the graph:
+
+			</p><div class="margin-auto padding">
+				<img class="margin-auto" src="img/undo_op.png">
+			</div>
+
+			<p>Undos are created by the local store whenever an operation is causally dependent on another that
+			has been invalidated at that point in history, and are cascaded automatically (in the example above, the 
+			undo will be cascaded to any operations that depend on that use of the Admin capability). Sometimes an undone
+			op needs to be redone (because the <i>InvalidateAfter</i> op that caused it had its own causal dependencies, that
+			were undone as well). This is also done automatically by the store.</p>
+
+			<p>While the tools just described do not provide a real finality solution,
+			because <i>InvalidateAfter</i>-type ops are still prone to causing problems when delayed or purposefully
+			ill-constructed, the combination of <i>InvalidateAfter</i> and <i>Undo</i> gives application designers a
+			way to mitigate its consequences by limiting by construction which patological cases may actually arise.
+			</p>
+
+			<h4>Synchronization</h4>
+
+			<p>During normal operation, applications operate on the local store, that holds a copy of the state-DAG.
+			In order to mantain its contents in sync with other peers, the application configures Hyper Hyper Space's 
+			mesh network and indicates which mutable objects (that are specially labelled in the DAG) need to be kept 
+			synchronized.</p>
+			
+			<h6>Transport Layer &amp; Signalling</h6>
+
+			<p>Hyper Hyper Space uses WebRTC and WebSockets as its transport protocols.</p>
+
+			<p>WebRTC browser-to-browser connections cannot be established without a signalling server, that helps both ends
+			negotiate connection parameters. This set-up has been adapted to work in a distributed setting by allowing
+			each peer to have his own signalling server. The web client keeps a WebSocket connection permantly open to
+			its signalling server, that will relay any connection establishment messages it receives back to the browser.</p>
+
+			<p>To build the bi-directional channel needed to establish a WebRTC connection, a web client will open a second
+			WebSocket to the signalling server used by the destination peer, that must be known beforehand, like this:</p>
+
+			<div class="margin-auto padding">
+				<img src="img/signalling.png">
+				<div class="margin-text text-center">Peer A initiates WebRTC connection establishment with Peer B. Dotted lines represent WebSocket connections.</div>
+			</div>
+
+			<p>If it wants to accept the connection, Peer B will also connect to Peer A's signalling server to be able to send 
+			his own connection establishment messages back to Peer A. Once the WebRTC is ready, both peers can drop the
+			WebSocket connection to the other's signalling server:</p>
+
+
+			<div class="margin-auto padding">
+				<img src="img/webrtc.png">
+			</div>
+
+			<p>The connection to the other peer's signalling server may be reopened if further connection management 
+			messages must be sent (e.g. if a peer is on a cellullar network and its IP address is changing).
+			</p>
+			
+			<p>If the application uses a significant amount of data, it may selectively activate and 
+			deactivate synchronization of objects as they are needed.
+			</p>
+
+			<p>Signalling servers need not be exclusive to a single peer. Thery are used very lightly and can be 
+			safely shared. In the future, signalling servers may use a DHT to free peers from having to know the 
+			signalling server another peer is using in order to establish a connection.
+			</p>
+
+			<p>Peers running in native environments may use WebSockets directly, if they are available, instead of
+			WebRTC connections.
+			</p>
+
+			<h6>Mesh Network</h6>
+
+			<p>Peers in the network form application-defined groups over which mutable objects are synchronized. The 
+			method for obtaining peers is also application defined: it may be a peer set kept in the DAG-state of
+			the app, an external source (a torrent file or similar) and finally the signalling 
+			servers support piggybacking messages to obtain a list of bootstrapping peers. Each peer connects to 
+			N random peers in the group. N should be chosen by the application to ensure with high probability that 
+			the resulting network overlay topology inculdes a spanning tree.</p>
+
+			<h6>Gossip &amp; Synchronization</h6>
+
+			<p>Each peer group implements an epidemic gossip protocol where each peer informs which objects they are
+			synchronizing, and the state they are in. Object state is determined by taking the set of operations that 
+			are maximal in the operation history, using the <span class="monospace">prev</span> partial order.
+			</p>
+
+			<p>Whenever gossip reveals an object to be in two different states, a syncrhonization is performed. Sync starts 
+			by peers requesting the headers of the operation history they are missing, and then using that information to 
+			request the actual
+			operations they need to fetch. The sync protocol is optimized to reduce round trips. It attempts to deduce
+			which operations will be requested, and starts streaming them back as soon as it can infer they are needed.
+			The receiving peer can send further messages to correct what he is getting.
+			</p>
 		</div>
 	</div>
-	<div class="inner-feature-width" style="display:flex;">
-		<div class="hide mobile padding-left no-padding-bottom" style="width: 25%; flex-shrink: 0">
-			<span class="small monospace"> The role of <i class="yellow">spaces</i> in <a href="https://www.hyperhyperspace.org">Hyper Hyper Space</a> is 
-				somewhat similar to that of files on personal computers, URLs on the web, etc.
-			</span>
-		</div>
-		<div class="padding-left padding-right" style="flex-grow: 4;">
-			<div class="page-width">
+	<div class="inner-page-width padding two-column golden reverse desktop gap-gutter">
+		<div>&nbsp;</div>
+		<div class="inner-text-width">
+			<h4>Spaces</h4>
 
-				<p>On the Internet, IP addresses are the network-independent identifiers that enable universal connectivity.
-				Similarly, Hyper Hyper Space introduces an application-independent addressing mechanism for top-level information objects: <i>Spaces</i>.
-				A space designates an object inside the application state-DAG, called its <i>entry point</i>. The type of this entry object
-				defines the type of content in the space: a chat room, a discussion forum, an e-commerce store, a blog, etc.
-				</p>
-				
-				<p>Spaces are <b>universally accessible</b> using <span style="border-bottom: 1px dotted" title="If the system gains popularity, 4-word codes may be necessary. Each word encodes 12 bits of information.">3-word codes</span>,
-				that encode a suffix of the entry point object's hash. In the current implementation, universal lookup is based on the
-				peer discovery mechanism that reuses signalling server connections.
-				</p>
-
-				<p>As a working example, we have created a naive chat room implementation [<a class="monospace" href="https://github.com/hyperhyperspace/p2p-chat">source</a>] that works as 
-				a space. Its entry point object has type <span class="monospace">ChatRoom</span>, and contains a title and a 
-				<span class="monospace">MutableSet</span> that will hold the messages:</p>
-
-				<div class="text-trim padding-right padding-bottom">
-					<div class="dull white text-padding">
-						<span class="monospace">
-							class ChatRoom {<br>
-							<br>
-							&nbsp;&nbsp;title: string;<br>
-							&nbsp;&nbsp;messages: MutableSet&lt;Message&gt;;<br>
-							&nbsp;&nbsp;...<br>
-							<br>
-							&nbsp;&nbsp;say(text: string, author: Identity) {<br>
-							&nbsp;&nbsp;&nbsp;&nbsp;let m = new Message();<br>
-							&nbsp;&nbsp;&nbsp;&nbsp;m.text = text;<br>
-							&nbsp;&nbsp;&nbsp;&nbsp;m.author = author;<br>
-							&nbsp;&nbsp;&nbsp;&nbsp;m.timestamp = Date.now();<br>
-							&nbsp;&nbsp;&nbsp;&nbsp;<br>
-							&nbsp;&nbsp;&nbsp;&nbsp;this.messages.add(m);<br>
-							&nbsp;&nbsp;}
-						</span>
-					</div>
-				</div>
-
-				<p class="no-margin-bottom">Information will be laid out as a DAG, as usual:</p>
-
-				<div class="margin-auto padding">
-					<img src="img/space.png">
-					<div class="margin-text text-center">DAG-state of ChatRoom 'friends of happiness', with a single message from Ken.</div>
-			  	</div>
-				
-				<p>The 36 bit suffix of the entry object hash <span class="orange monospace">0bd551&mldr;</span> has been encoded as the 3-word 
-				code <span class="orange monospace">kind earth trophy</span>.
-				
-				<p>A client, presented with a 3-word code, will fetch the top-level object of type <span class="monospace">ChatRoom</span>
-				using the universal lookup mechanism (locating an object whose hash matches the 36-bit suffix indicated by
-				the words). The rest of the chat contents will then be syncrhonized using Hyper Hyper Space's mesh (in this case, only the 
-				<span class="monospace">MutableSet</span> that holds the messages).</p>
-
-				<p>In a more realistic scenario, the set of users that have joined the room, who the admins are, content moderation, etc. could be 
-				modelled using the causal relationships and the <i>InvalidateAfter</i> construction. Notice that there's no need 
-				to define a specific protocol for the behaviour of the room: everything follows from the type definitions and validation 
-				functions (not shown above for brevity) and Hyper Hyper Space's DAG-based sync.
-				</p>
-
-				<p>We've implemented two clients for this simple chat backend: a console-based one [<a class="monospace" href="https://github.com/hyperhyperspace/p2p-chat-cli">source</a>] 
-				and one using a static page and Hyper Hyper Space's in-browser stack [<a class="monospace" href="https://github.com/hyperhyperspace/p2p-chat-web">source</a>], [<a class="monospace" href="https://hyperhyper.space/chat-window">demo</a>]. 
-				They are interoperable. In order to join a chat room, at least one participant must be online.</p>
-				
-				<p>Websites may be used to look up spaces like in the chat example, using 3-word codes or full hashes. Spaces can also be <b>embedded using iFrames</b>, and a website may
-				also pin down and load a fixed space, providing an experience similar to a <b>regular page</b>.
-				</p>
-
-				<h4>Interoperability</h4>
-
-				<p>When creating new clients for a given application, as long as the data model definitions are respected 
-				(they could be factored into a library, like in the naive chat example) all previously created information 
-				is immediately accessible. A device using the new client can just synchronize its contents using the mesh.</p>
-
-				<p>Furthermore, since all object references are hash-based, and the cryptographic hash function guarantees that 
-				no unwanted collisions should occur,
-				different applications can be integrated by sharing portions of their state-DAGs. For example, an e-commerce 
-				storefront could integrate its chat support channels directly with the company's workspace collaboration system - 
-				by having the same objects in both DAGs. Instead of defining a communication interface using an API, they would 
-				be agreeing on the same distributed datatypes and using Hyper Hyper Space's sync to modify the same state.
-				</p>
-
-				<h4>Future plans</h4>
-
-				<p>This project is work in progress. Join us at:
-
-				<div class="padding-left">
-				<span class="monospace">Github: <a target="_blank" href="https://github.com/hyperhyperspace">https://github.com/hyperhyperspace</a><br>
-					Discord: <a target="_blank" href="https://discord.gg/9epr3XrRnW">invite</a><br>
-					HHS-based chat demo: <a target="_blank" href="https://hyperhyper.space/chat-window/#/room/en/suburb-suburb-awake">suburb suburb awake</a>
+			<div class="inner-text-width text-crunch small gutter no-margin-top text-crunch">
+				<span class=> The role of <i class="text-color base-color shade bold">spaces</i> in <a href="https://www.hyperhyperspace.org/">Hyper Hyper Space</a> is 
+					somewhat similar to that of files on personal computers, URLs on the web, etc.
 				</span>
-				</div>
-				</p>
-
-				<p>You can also visit <a target="_blank" href="https://www.hyperhyperspace.org">Hyper Hyper Space's homepage</a> or drop as an email at <a href="mailto:hello@hyperhyperspace.org">hello@hyperhyperspace.org</a>.</p>
-
-				<p>Thanks!</p>
 			</div>
+
+			<p>On the Internet, IP addresses are the network-independent identifiers that enable universal connectivity.
+			Similarly, Hyper Hyper Space introduces an application-independent addressing mechanism for top-level information objects: <i>Spaces</i>.
+			A space designates an object inside the application state-DAG, called its <i>entry point</i>. The type of this entry object
+			defines the type of content in the space: a chat room, a discussion forum, an e-commerce store, a blog, etc.
+			</p>
+			
+			<p>Spaces are <b>universally accessible</b> using <span class="text-color base color bold" title="If the system gains popularity, 4-word codes may be necessary. Each word encodes 12 bits of information.">3-word codes</span>,
+			that encode a suffix of the entry point object's hash. In the current implementation, universal lookup is based on the
+			peer discovery mechanism that reuses signalling server connections.
+			</p>
+
+			<p>As a working example, we have created a naive chat room implementation [<a class="monospace" href="https://github.com/hyperhyperspace/p2p-chat">source</a>] that works as 
+			a space. Its entry point object has type <span class="monospace">ChatRoom</span>, and contains a title and a 
+			<span class="monospace">MutableSet</span> that will hold the messages:</p>
+
+			<div class="text-trim padding-right padding-bottom">
+				<div class="dull white text-padding">
+					<span class="monospace">
+						class ChatRoom {<br>
+						<br>
+						&nbsp;&nbsp;title: string;<br>
+						&nbsp;&nbsp;messages: MutableSet&lt;Message&gt;;<br>
+						&nbsp;&nbsp;...<br>
+						<br>
+						&nbsp;&nbsp;say(text: string, author: Identity) {<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;let m = new Message();<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;m.text = text;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;m.author = author;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;m.timestamp = Date.now();<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;this.messages.add(m);<br>
+						&nbsp;&nbsp;}
+					</span>
+				</div>
+			</div>
+
+			<p class="no-margin-bottom">Information will be laid out as a DAG, as usual:</p>
+
+			<div class="margin-auto padding">
+				<img src="img/space.png">
+				<div class="margin-text text-center">DAG-state of ChatRoom 'friends of happiness', with a single message from Ken.</div>
+			</div>
+			
+			<p>The 36 bit suffix of the entry object hash <span class="text-color shade dark orange monospace">0bd551…</span> has been encoded as the 3-word 
+			code <span class="text-color shade dark orange monospace">kind earth trophy</span>.
+			
+			</p><p>A client, presented with a 3-word code, will fetch the top-level object of type <span class="monospace">ChatRoom</span>
+			using the universal lookup mechanism (locating an object whose hash matches the 36-bit suffix indicated by
+			the words). The rest of the chat contents will then be syncrhonized using Hyper Hyper Space's mesh (in this case, only the 
+			<span class="monospace">MutableSet</span> that holds the messages).</p>
+
+			<p>In a more realistic scenario, the set of users that have joined the room, who the admins are, content moderation, etc. could be 
+			modelled using the causal relationships and the <i>InvalidateAfter</i> construction. Notice that there's no need 
+			to define a specific protocol for the behaviour of the room: everything follows from the type definitions and validation 
+			functions (not shown above for brevity) and Hyper Hyper Space's DAG-based sync.
+			</p>
+
+			<p>We've implemented two clients for this simple chat backend: a console-based one [<a class="monospace" href="https://github.com/hyperhyperspace/p2p-chat-cli">source</a>] 
+			and one using a static page and Hyper Hyper Space's in-browser stack [<a class="monospace" href="https://github.com/hyperhyperspace/p2p-chat-web">source</a>], [<a class="monospace" href="https://hyperhyper.space/chat-window">demo</a>]. 
+			They are interoperable. In order to join a chat room, at least one participant must be online.</p>
+			
+			<p>Websites may be used to look up spaces like in the chat example, using 3-word codes or full hashes. Spaces can also be <b>embedded using iFrames</b>, and a website may
+			also pin down and load a fixed space, providing an experience similar to a <b>regular page</b>.
+			</p>
+
+			<h4>Interoperability</h4>
+
+			<p>When creating new clients for a given application, as long as the data model definitions are respected 
+			(they could be factored into a library, like in the naive chat example) all previously created information 
+			is immediately accessible. A device using the new client can just synchronize its contents using the mesh.</p>
+
+			<p>Furthermore, since all object references are hash-based, and the cryptographic hash function guarantees that 
+			no unwanted collisions should occur,
+			different applications can be integrated by sharing portions of their state-DAGs. For example, an e-commerce 
+			storefront could integrate its chat support channels directly with the company's workspace collaboration system - 
+			by having the same objects in both DAGs. Instead of defining a communication interface using an API, they would 
+			be agreeing on the same distributed datatypes and using Hyper Hyper Space's sync to modify the same state.
+			</p>
+
+			<h4>Future plans</h4>
+
+			<p>This project is work in progress. Join us at:
+
+			</p><div class="padding-left">
+			<span class="monospace">Github: <a target="_blank" href="https://github.com/hyperhyperspace">https://github.com/hyperhyperspace</a><br>
+				Discord: <a target="_blank" href="https://discord.gg/9epr3XrRnW">invite</a><br>
+				HHS-based chat demo: <a target="_blank" href="https://hyperhyper.space/chat-window/#/room/en/suburb-suburb-awake">suburb suburb awake</a>
+			</span>
+			</div>
+			<p></p>
+
+			<p>You can also visit <a target="_blank" href="https://www.hyperhyperspace.org/">Hyper Hyper Space's homepage</a> or drop as an email at <a href="mailto:hello@hyperhyperspace.org">hello@hyperhyperspace.org</a>.</p>				
 		</div>
 	</div>
-	<div style="border-top: 1px solid;" class="bar inner-feature-width gutter-top">
-		&nbsp;
+	<div class="bar inner-feature-width gutter-top border-top">
+    <div class="inner-page-width padding no-padding-top no-padding-bottom text-right">
+      <span class="padding monospace small">Designed using <a target="_blank" href="https://github.com/cavepaint/cavepaintCSS">Cavepaint</a>.</span>
+    </div>
+		
 	</div>
-</body>
-</html>
+
+	<style>
+		/* This project uses Cavepaint (MIT License) by Rex Riepe */
+/* https://github.com/cavepaint/cavepaintCSS */
+:root {
+  --font-size-base: 18px;
+  --font-size-mod: 1;
+  --font-family: var(--sans-serif);
+  --line-height: 1.8;
+  --headline-base: 1em;
+  --headline-mod: 1;
+  --pad: 0.8rem;
+  --padding: var(--pad);
+  --margin: var(--pad);
+  --gutter: calc(2 * var(--pad));
+  --text-padding: 0.28em;
+  --text-margin: var(--text-padding);
+  --text-border-radius: var(--text-padding);
+  --text-shadow: var(--box-shadow);
+  --gap: var(--pad);
+  --grid-columns: 12;
+  --golden: 1.618;
+  --h: 194.3;
+  --s: 91.6%;
+  --l: 97.1%;
+  --a: 0.2;
+  --border-width: 1px;
+  --border-style: solid;
+  --border-radius: 0.5em;
+  --border-h: var(--h);
+  --border-s: var(--s);
+  --border-l: clamp(0%, calc(var(--l) * 0.85), 85%);
+  --border-color: hsl(var(--border-h), var(--border-s), var(--border-l));
+  --border: var(--border-width) var(--border-style) var(--border-color);
+  --border-thin: calc(var(--border-width) / 2);
+  --border-thick: calc(var(--border-width) * 2);
+  --border-radius: var(--text-padding);
+  --text-measure: 54;
+  --text-width: calc(var(--text-measure) * 0.618rem);
+  --card-width: calc(var(--text-width) * 0.618);
+  --page-width: calc(var(--text-width) * 1.618);
+  --feature-width: calc(var(--page-width) * 1.618);
+  --box-shadow: var(--shadow-position) var(--shadow-position) var(--shadow-blur) var(--shadow-color);
+  --shadow-position: 1px;
+  --shadow-blur: 1px;
+  --shadow-color: rgba(2, 27, 34, 0.2);
+  --direction: 180deg;
+  --warm: rgba(215.8, 97.5, 108.1, var(--a));
+  --cool: rgba(11.7, 195, 195.5, var(--a));
+  --neutral: rgba(34.8, 128.6, 191.8, var(--a));
+  --dull: rgba(110.5, 110.5, 110.5, var(--a));
+  --monospace: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, "DejaVu Sans Mono", Courier, monospace;
+  --serif: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "Droid Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+  --sans-serif: "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+  --ambient: #12bff5;
+  --white: #f1fbfe;
+  --black: #021b22;
+  --red: #cb202f;
+  --orange: #ffa500;
+  --yellow: #f4ff0c;
+  --green: #008617;
+  --teal: #008080;
+  --cyan: #0df1f2;
+  --blue: #0e22ee;
+  --purple: #750d8c;
+  --magenta: #c923ea;
+  --gray: #808080;
+  --base-color: #1a7fc3;
+  --complement: #c35e1a;
+  --accent: #1a2ac3;
+  --second-accent: #1ac3b3;
+  --split: #b31ac3;
+  --second-split: #2ac31a;
+  --triad: #5e1ac3;
+  --second-triad: var(--complement);
+  --third-triad: #1ac35e;
+  --tetrad: #341ac3;
+  --second-tetrad: #c31a55;
+  --third-tetrad: #a9c31a;
+  --fourth-tetrad: #1ac388;
+  --action: #1a7fc3;
+  --reaction: #8d4413;
+  --info: var(--cyan);
+  --warning: var(--orange);
+  --success: var(--green);
+  --failure: var(--red);
+}
+@media screen and (min-width: 1px) {
+  :root {
+    --pad: calc(0.6 * 0.8rem);
+    --font-size: calc(var(--font-size-base) - 2px);
+    --headline-base: 1em;
+  }
+}
+@media screen and (min-width: calc(37.08rem + 1.6rem)) {
+  :root {
+    --pad: calc(0.8 * 0.8rem);
+    --font-size: calc(var(--font-size-base) - 1px);
+    --headline-base: 1.1em;
+  }
+}
+@media screen and (min-width: calc(59.99544rem + 1.6rem)) {
+  :root {
+    --pad: 0.8rem;
+    --font-size: var(--font-size-base);
+    --headline-base: 1.2em;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: calc(var(--font-size) * var(--font-size-mod));
+}
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  color: var(--black);
+  background-color: var(--white);
+  font-family: var(--font-family);
+  line-height: var(--line-height);
+  margin: 0;
+  -webkit-overflow-scrolling: touch;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+  letter-spacing: -0.025em;
+  color: inherit;
+  line-height: 1.5;
+}
+h1 *,
+h2 *,
+h3 *,
+h4 *,
+h5 *,
+h6 * {
+  font-size: inherit;
+}
+h1 {
+  font-size: calc((var(--headline-base) * var(--font-size-mod)) * 2.2);
+}
+h2 {
+  font-size: calc((var(--headline-base) * var(--font-size-mod)) * 1.8);
+}
+h3 {
+  font-size: calc((var(--headline-base) * var(--font-size-mod)) * 1.4);
+}
+h4 {
+  font-size: calc((var(--headline-base) * var(--font-size-mod)) * 1.2);
+}
+h5 {
+  font-size: calc((var(--headline-base) * var(--font-size-mod)) * 1.1);
+}
+h6 {
+  font-size: calc((var(--headline-base) * var(--font-size-mod)) * 1);
+}
+p {
+  margin-bottom: 1em;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+nav {
+  z-index: 99;
+}
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+em {
+  display: inline;
+  font-style: italic;
+}
+hr {
+  border-color: hsl(var(--h), var(--s), var(--l)) !important;
+}
+fieldset {
+  border: 0;
+  outline: none;
+}
+input {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  background: var(--white);
+  color: var(--black);
+  border: var(--border);
+  line-height: var(--line-height);
+  padding: var(--text-padding);
+}
+textarea {
+  font-family: var(--font-family);
+  line-height: var(--line-height);
+  border: var(--border);
+  margin-bottom: var(--margin);
+  background: var(--white);
+  color: var(--black);
+  font-size: var(--font-size);
+  padding: var(--text-padding);
+  overflow: auto;
+}
+ul,
+ol {
+  margin-left: var(--gutter);
+  margin-bottom: var(--margin-bottom);
+}
+li {
+  margin-bottom: var(--text-margin);
+}
+kbd {
+  color: var(--white);
+  border-radius: var(--border-radius);
+  padding: var(--text-padding);
+  white-space: nowrap;
+}
+pre,
+code {
+  font-family: var(--monospace);
+  margin-bottom: var(--margin);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  padding: var(--text-padding);
+  background: var(--black);
+  color: var(--white);
+}
+pre.white-space,
+pre.word-break {
+  white-space: pre-wrap;
+}
+pre > code {
+  background: transparent;
+  padding: 0;
+}
+.grid,
+.one-column,
+.two-column,
+.three-column,
+.four-column,
+.five-column,
+.six-column,
+.seven-column,
+.eight-column,
+.nine-column,
+.ten-column,
+.eleven-column,
+.twelve-column {
+  --grid-columns: 12;
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+}
+.mobile,
+.tablet,
+.mobile.tablet,
+.desktop {
+  grid-template-columns: minmax(0, 1fr);
+}
+@media screen and (min-width: 1px) {
+  .mobile {
+    grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+  }
+}
+@media screen and (min-width: calc(37.08rem + 1.6rem)) {
+  .mobile {
+    --grid-columns: 1;
+  }
+}
+@media screen and (max-width: calc(calc(37.08rem + 1.6rem) - 1px)) {
+  .tablet {
+    --grid-columns: 1;
+  }
+}
+@media screen and (min-width: calc(37.08rem + 1.6rem)) {
+  .tablet {
+    grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+  }
+}
+.mobile.tablet {
+  grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+}
+@media screen and (min-width: calc(59.99544rem + 1.6rem)) {
+  .mobile.tablet {
+    --grid-columns: 1;
+  }
+}
+@media screen and (min-width: calc(59.99544rem + 1.6rem)) {
+  .desktop {
+    grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+  }
+}
+@media screen and (max-width: calc(calc(59.99544rem + 1.6rem) - 1px)) {
+  .desktop {
+    --grid-columns: 1;
+  }
+}
+.one-column {
+  --grid-columns: 1;
+}
+.two-column {
+  --grid-columns: 2;
+}
+.three-column {
+  --grid-columns: 3;
+}
+.four-column {
+  --grid-columns: 4;
+}
+.five-column {
+  --grid-columns: 5;
+}
+.six-column {
+  --grid-columns: 6;
+}
+.seven-column {
+  --grid-columns: 7;
+}
+.eight-column {
+  --grid-columns: 8;
+}
+.nine-column {
+  --grid-columns: 9;
+}
+.ten-column {
+  --grid-columns: 10;
+}
+.eleven-column {
+  --grid-columns: 11;
+}
+.twelve-column {
+  --grid-columns: 12;
+}
+.grid-width-one {
+  grid-column: auto / span 1;
+}
+.grid-width-two {
+  grid-column: auto / span 2;
+}
+.grid-width-three {
+  grid-column: auto / span 3;
+}
+.grid-width-four {
+  grid-column: auto / span 4;
+}
+.grid-width-five {
+  grid-column: auto / span 5;
+}
+.grid-width-six {
+  grid-column: auto / span 6;
+}
+.grid-width-seven {
+  grid-column: auto / span 7;
+}
+.grid-width-eight {
+  grid-column: auto / span 8;
+}
+.grid-width-nine {
+  grid-column: auto / span 9;
+}
+.grid-width-ten {
+  grid-column: auto / span 10;
+}
+.grid-width-eleven {
+  grid-column: auto / span 11;
+}
+.grid-width-twelve {
+  grid-column: auto / span 12;
+}
+@media screen and (min-width: calc(37.08rem + 1.6rem)) {
+  .grid.mobile > *,
+  .one-column.mobile > *,
+  .two-column.mobile > *,
+  .three-column.mobile > *,
+  .four-column.mobile > *,
+  .five-column.mobile > *,
+  .six-column.mobile > *,
+  .seven-column.mobile > *,
+  .eight-column.mobile > *,
+  .nine-column.mobile > *,
+  .ten-column.mobile > *,
+  .eleven-column.mobile > *,
+  .twelve-column.mobile > * {
+    grid-column: auto / span 1;
+  }
+}
+@media screen and (min-width: calc(59.99544rem + 1.6rem)) {
+  .grid.mobile.tablet > *,
+  .one-column.mobile.tablet > *,
+  .two-column.mobile.tablet > *,
+  .three-column.mobile.tablet > *,
+  .four-column.mobile.tablet > *,
+  .five-column.mobile.tablet > *,
+  .six-column.mobile.tablet > *,
+  .seven-column.mobile.tablet > *,
+  .eight-column.mobile.tablet > *,
+  .nine-column.mobile.tablet > *,
+  .ten-column.mobile.tablet > *,
+  .eleven-column.mobile.tablet > *,
+  .twelve-column.mobile.tablet > * {
+    grid-column: auto / span 1;
+  }
+}
+@media screen and (max-width: calc(calc(37.08rem + 1.6rem) - 1px)) {
+  .grid.tablet > *,
+  .one-column.tablet > *,
+  .two-column.tablet > *,
+  .three-column.tablet > *,
+  .four-column.tablet > *,
+  .five-column.tablet > *,
+  .six-column.tablet > *,
+  .seven-column.tablet > *,
+  .eight-column.tablet > *,
+  .nine-column.tablet > *,
+  .ten-column.tablet > *,
+  .eleven-column.tablet > *,
+  .twelve-column.tablet > * {
+    grid-column: auto / span 1;
+  }
+}
+@media screen and (max-width: calc(calc(59.99544rem + 1.6rem) - 1px)) {
+  .grid.desktop > *,
+  .one-column.desktop > *,
+  .two-column.desktop > *,
+  .three-column.desktop > *,
+  .four-column.desktop > *,
+  .five-column.desktop > *,
+  .six-column.desktop > *,
+  .seven-column.desktop > *,
+  .eight-column.desktop > *,
+  .nine-column.desktop > *,
+  .ten-column.desktop > *,
+  .eleven-column.desktop > *,
+  .twelve-column.desktop > * {
+    grid-column: auto / span 1;
+  }
+}
+.two-column.golden {
+  grid-template-columns: 1.618fr 1fr;
+}
+.two-column.golden.mobile,
+.two-column.golden.tablet,
+.two-column.golden.mobile.tablet,
+.two-column.golden.desktop {
+  grid-template-columns: 1fr;
+}
+@media screen and (min-width: 1px) {
+  .two-column.golden.mobile {
+    grid-template-columns: 1.618fr 1fr;
+  }
+}
+@media screen and (min-width: calc(37.08rem + 1.6rem)) {
+  .two-column.golden.mobile {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (min-width: calc(37.08rem + 1.6rem)) {
+  .two-column.golden.tablet {
+    grid-template-columns: 1.618fr 1fr;
+  }
+}
+@media screen and (max-width: calc(calc(59.99544rem + 1.6rem) - 1px)) {
+  .two-column.golden.mobile.tablet {
+    grid-template-columns: 1.618fr 1fr;
+  }
+}
+@media screen and (min-width: calc(59.99544rem + 1.6rem)) {
+  .two-column.golden.desktop {
+    grid-template-columns: 1.618fr 1fr;
+  }
+}
+.two-column.golden.reverse {
+  grid-template-columns: 1fr 1.618fr;
+}
+.two-column.golden.reverse.mobile,
+.two-column.golden.reverse.tablet,
+.two-column.golden.reverse.mobile.tablet,
+.two-column.golden.reverse.desktop {
+  grid-template-columns: 1fr;
+}
+@media screen and (min-width: 1px) {
+  .two-column.golden.reverse.mobile {
+    grid-template-columns: 1fr 1.618fr;
+  }
+}
+@media screen and (min-width: calc(37.08rem + 1.6rem)) {
+  .two-column.golden.reverse.mobile {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (min-width: calc(37.08rem + 1.6rem)) {
+  .two-column.golden.reverse.tablet {
+    grid-template-columns: 1fr 1.618fr;
+  }
+}
+@media screen and (max-width: calc(calc(59.99544rem + 1.6rem) - 1px)) {
+  .two-column.golden.reverse.mobile.tablet {
+    grid-template-columns: 1fr 1.618fr;
+  }
+}
+@media screen and (min-width: calc(59.99544rem + 1.6rem)) {
+  .two-column.golden.reverse.desktop {
+    grid-template-columns: 1fr 1.618fr;
+  }
+}
+.button,
+button {
+  display: inline;
+  border-width: 0;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  position: relative;
+  font-family: inherit;
+  padding: var(--text-padding);
+  color: inherit;
+  background-color: inherit;
+  line-height: 1.25;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-decoration: none;
+  touch-action: manipulation;
+  cursor: pointer;
+  transform: scale(1);
+  transition: scale 0.08s linear;
+}
+.button:active,
+button:active {
+  transform: scale(0.96);
+  box-shadow: unset;
+}
+.modal {
+  max-width: none;
+  z-index: 99;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.overlay {
+  padding: 0;
+  position: relative;
+}
+.overlay .top,
+.overlay .bottom,
+.overlay .left,
+.overlay .right {
+  position: absolute;
+  z-index: 10;
+}
+.overlay.stretch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.bar {
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.bar.bottom {
+  top: auto;
+  bottom: 0;
+}
+.card {
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  background: var(--white);
+  color: var(--black);
+  box-shadow: var(--box-shadow);
+  max-width: var(--card-width);
+}
+.padding {
+  padding: var(--padding);
+}
+.margin {
+  margin: var(--margin);
+}
+.gutter {
+  margin: var(--gutter);
+}
+.inner-gutter {
+  padding: var(--gutter);
+}
+.text-padding {
+  padding: var(--text-padding);
+}
+.text-margin {
+  margin: var(--text-padding);
+}
+.padding-top {
+  padding-top: var(--padding);
+}
+.padding-right {
+  padding-right: var(--padding);
+}
+.padding-bottom {
+  padding-bottom: var(--padding);
+}
+.padding-left {
+  padding-left: var(--padding);
+}
+.margin-top {
+  margin-top: var(--margin);
+}
+.margin-right {
+  margin-right: var(--margin);
+}
+.margin-bottom {
+  margin-bottom: var(--margin);
+}
+.margin-left {
+  margin-left: var(--margin);
+}
+.gutter-top {
+  margin-top: var(--gutter);
+}
+.gutter-right {
+  margin-right: var(--gutter);
+}
+.gutter-bottom {
+  margin-bottom: var(--gutter);
+}
+.gutter-left {
+  margin-left: var(--gutter);
+}
+.inner-gutter-top {
+  padding-top: var(--gutter);
+}
+.inner-gutter-right {
+  padding-right: var(--gutter);
+}
+.inner-gutter-bottom {
+  padding-bottom: var(--gutter);
+}
+.inner-gutter-left {
+  padding-left: var(--gutter);
+}
+.text-padding-top {
+  padding-top: var(--text-padding);
+}
+.text-padding-right {
+  padding-right: var(--text-padding);
+}
+.text-padding-bottom {
+  padding-bottom: var(--text-padding);
+}
+.text-padding-left {
+  padding-left: var(--text-padding);
+}
+.text-margin-top {
+  margin-top: var(--text-padding);
+}
+.text-margin-right {
+  margin-right: var(--text-padding);
+}
+.text-margin-bottom {
+  margin-bottom: var(--text-padding);
+}
+.text-margin-left {
+  margin-left: var(--text-padding);
+}
+.text-border-radius,
+.text-rounded {
+  border-radius: var(--text-padding);
+}
+.block {
+  display: block;
+}
+.inline {
+  display: inline;
+}
+.inline-all,
+.inline-all * {
+  display: inline;
+}
+.inline-break::after {
+  content: "\A";
+  white-space: pre;
+}
+.initial {
+  display: initial;
+}
+.table {
+  display: table;
+}
+.flex {
+  display: flex;
+}
+.inline-block {
+  display: inline-block;
+}
+.static {
+  position: static;
+}
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
+.float-right {
+  float: right;
+}
+.float-left {
+  float: left;
+}
+.margin-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.width-auto {
+  width: auto;
+}
+.inset {
+  box-shadow: inset var(--box-shadow);
+}
+.box-shadow,
+.shadow {
+  box-shadow: var(--box-shadow);
+}
+.shallow {
+  --shadow-position: 0.5px;
+  --box-shadow: var(--shadow-position) var(--shadow-position) var(--shadow-blur) var(--shadow-color);
+}
+.deep {
+  --shadow-position: 2px;
+  --box-shadow: var(--shadow-position) var(--shadow-position) var(--shadow-blur) var(--shadow-color);
+}
+.full-height {
+  min-height: 100%;
+}
+.full-height.force {
+  height: 100%;
+}
+.viewport-height {
+  min-height: 100vh;
+}
+.viewport-height.force {
+  height: 100vh;
+}
+.golden-height {
+  min-height: 62vh;
+}
+.golden-height.force {
+  height: 62vh;
+}
+.overflow-scroll {
+  overflow-y: auto;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.border {
+  border: var(--border);
+}
+.border-top {
+  border-top: var(--border);
+}
+.border-right {
+  border-right: var(--border);
+}
+.border-bottom {
+  border-bottom: var(--border);
+}
+.border-left {
+  border-left: var(--border);
+}
+.border-radius,
+.rounded {
+  border-radius: var(--border-radius);
+}
+.dashed {
+  border-style: dashed;
+}
+.dotted {
+  border-style: dotted;
+}
+.thick {
+  border-width: var(--border-thick);
+}
+.thin {
+  --border-l: clamp(0%, calc(var(--l) * 0.9), 85%);
+  border-width: var(--border-thin);
+}
+.current-color {
+  border-color: currentColor;
+}
+.fade {
+  opacity: 0.65;
+}
+.monospace {
+  font-family: var(--monospace);
+}
+.serif {
+  font-family: var(--serif);
+}
+.sans-serif {
+  font-family: var(--sans-serif);
+}
+.bold {
+  font-weight: bold;
+}
+.italic {
+  font-style: italic;
+}
+.all-caps {
+  text-transform: uppercase;
+}
+.underline {
+  text-decoration: underline;
+}
+.text-transparent {
+  color: transparent;
+}
+.small {
+  --font-size-mod: 0.9;
+}
+.medium {
+  --font-size-mod: 1;
+}
+.big {
+  --font-size-mod: 1.1;
+}
+.huge {
+  --font-size-mod: 1.2;
+}
+@media screen and (min-width: calc(37.08rem + 1.6rem)) {
+  .small {
+    --font-size-mod: 0.9;
+  }
+  .medium {
+    --font-size-mod: 1;
+  }
+  .big {
+    --font-size-mod: 1.2;
+  }
+  .huge {
+    --font-size-mod: 1.4;
+  }
+}
+@media screen and (min-width: calc(59.99544rem + 1.6rem)) {
+  .small {
+    --font-size-mod: 0.9;
+  }
+  .medium {
+    --font-size-mod: 1;
+  }
+  .big {
+    --font-size-mod: 1.3;
+  }
+  .huge {
+    --font-size-mod: 1.6;
+  }
+}
+.vertical-center,
+.center-vertical {
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: column;
+  justify-content: center;
+}
+.container {
+  max-width: var(--page-width);
+  margin: var(--margin) auto;
+  padding: var(--padding);
+}
+.text-trim {
+  line-height: 1;
+}
+.text-crunch {
+  line-height: calc((var(--line-height) + 1) * 0.62);
+}
+.text-align-center,
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.gap-padding {
+  --gap: var(--padding);
+}
+.gap-margin {
+  --gap: var(--margin);
+}
+.gap-gutter {
+  --gap: var(--gutter);
+}
+.gap-border-width {
+  --gap: var(--border-width);
+}
+.gap-text-padding,
+.gap-text-margin {
+  --gap: var(--text-padding);
+}
+.text-color {
+  color: hsl(var(--h), clamp(0%, var(--s), 90%), clamp(0%, var(--l), 40%)) !important;
+  background-color: transparent !important;
+}
+.text-color.tint {
+  color: hsl(var(--h), clamp(0%, var(--s), 90%), clamp(60%, var(--l), 100%)) !important;
+  background-color: transparent !important;
+}
+.shade,
+.white,
+.orange,
+.yellow,
+.light.green,
+.light.teal,
+.cyan,
+.light.gray,
+.light.base-color,
+.light.complement,
+.bright.complement,
+.second.accent,
+.second.split,
+.third.triad,
+.third.tetrad,
+.fourth.tetrad,
+.orange,
+.yellow,
+.light.green,
+.light.teal,
+.cyan,
+.light.second.triad,
+.bright.second.triad,
+.light.action,
+.light.primary,
+.light.reaction,
+.bright.reaction,
+.light.secondary,
+.bright.secondary,
+.warning,
+.warning,
+.light.success,
+.light.success {
+  color: var(--black);
+  background-color: hsl(var(--h), var(--s), var(--l));
+  border-color: hsl(var(--border-h), var(--border-s), var(--border-l));
+  --border-h: var(--h);
+  --border-s: var(--s);
+  --border-l: clamp(0%, calc(var(--l) * 0.75), 85%);
+}
+.tint,
+.black,
+.red,
+.dark.orange,
+.dim.orange,
+.green,
+.teal,
+.dark.cyan,
+.blue,
+.purple,
+.magenta,
+.gray,
+.base-color,
+.complement,
+.accent,
+.dark.second.accent,
+.dim.second.accent,
+.split,
+.dark.second.split,
+.dim.second.split,
+.triad,
+.dark.third.triad,
+.dim.third.triad,
+.tetrad,
+.second.tetrad,
+.dark.third.tetrad,
+.dim.third.tetrad,
+.dark.fourth.tetrad,
+.dim.fourth.tetrad,
+.red,
+.dark.orange,
+.dim.orange,
+.green,
+.teal,
+.dark.cyan,
+.blue,
+.purple,
+.magenta,
+.second.triad,
+.action,
+.primary,
+.reaction,
+.secondary,
+.info,
+.info,
+.dark.warning,
+.dim.warning,
+.dark.warning,
+.dim.warning,
+.success,
+.success,
+.failure,
+.failure,
+.error,
+.error {
+  color: var(--white);
+  background-color: hsl(var(--h), var(--s), var(--l));
+  border-color: hsl(var(--border-h), var(--border-s), var(--border-l));
+  --border-h: var(--h);
+  --border-s: var(--s);
+  --border-l: clamp(0%, calc(var(--l) * 0.75), 85%);
+}
+.transparent {
+  background-color: transparent !important;
+  color: inherit;
+  border-color: inherit;
+  --light: hsl(var(--h), var(--s), var(--l), 0.85);
+  background-image: linear-gradient(var(--light), var(--light));
+  color: var(--black);
+}
+.transparent.black,
+.transparent.dark {
+  --dark: hsla(var(--h), var(--s), var(--l), 0.65);
+  background-image: linear-gradient(var(--dark), var(--dark));
+  color: var(--white) !important;
+}
+.gradient {
+  background: linear-gradient(var(--direction), hsla(var(--h), var(--s), var(--l), 1) 0%, hsla(var(--h), var(--s), var(--l), 0) 100%);
+}
+.horizontal {
+  --direction: 180deg;
+}
+.vertical {
+  --direction: 90deg;
+}
+.trim {
+  margin-bottom: 0;
+}
+.trim-inner * {
+  margin-bottom: 0;
+}
+.trim-all {
+  margin-bottom: 0;
+}
+.trim-all * {
+  margin-bottom: 0;
+}
+.bump {
+  position: relative;
+}
+.bump.up {
+  top: -2px;
+}
+.bump.down {
+  top: 2px;
+}
+.bump.left {
+  left: -2px;
+}
+.bump.right {
+  right: initial;
+  left: 2px;
+}
+.hidden {
+  display: none !important;
+}
+.clearfix,
+.clear {
+  clear: both;
+}
+.clearfix::after,
+.clear::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+.user-background {
+  background-color: var(--white);
+  color: var(--black);
+}
+@media (prefers-color-scheme: dark) {
+  .user-background {
+    background: var(--black);
+    color: var(--white);
+  }
+}
+.align-content {
+  align-content: stretch;
+}
+.align-items {
+  align-items: stretch;
+}
+.align-self {
+  align-self: auto;
+}
+.flex {
+  flex: 0 1 auto;
+}
+.flex-direction {
+  flex-direction: column;
+}
+.justify-content {
+  justify-content: center;
+}
+.list-style {
+  list-style: disc inside none;
+}
+.list-style-type {
+  list-style-type: disc;
+}
+.text-indent {
+  text-indent: 2ch;
+}
+.text-justify {
+  text-justify: justify;
+}
+.text-overflow {
+  text-overflow: ellipsis;
+}
+.text-shadow {
+  text-shadow: var(--text-shadow);
+}
+.line-height {
+  line-height: var(--line-height);
+}
+.vertical-align {
+  vertical-align: middle;
+}
+.letter-spacing {
+  letter-spacing: 0;
+}
+.word-spacing {
+  word-spacing: normal;
+}
+.white-space {
+  white-space: nowrap;
+}
+.word-break {
+  word-break: break-all;
+}
+.word-wrap {
+  word-wrap: break-word;
+}
+.transform {
+  transform: none;
+}
+.transition {
+  transition: all 0s ease 0s;
+}
+.display {
+  display: block;
+}
+.position {
+  position: absolute;
+}
+.top {
+  top: 0;
+}
+.right {
+  right: 0;
+}
+.bottom {
+  bottom: 0;
+}
+.left {
+  left: 0;
+}
+.float {
+  float: left;
+}
+.clear {
+  clear: both;
+}
+.z-index {
+  z-index: 10;
+}
+.overflow {
+  overflow: hidden;
+}
+.cursor,
+.pointer {
+  cursor: pointer;
+}
+.placeholder {
+  min-height: var(--pad);
+}
+.placeholder::after {
+  content: " ";
+}
+.rem-width {
+  width: 1rem;
+}
+.golden-width {
+  max-width: calc(62% - var(--pad));
+}
+.golden-width.force {
+  width: calc(62% - var(--pad));
+}
+.golden-width.switch {
+  max-width: calc(38% - var(--pad));
+}
+.golden-width.switch.force {
+  width: calc(38% - var(--pad));
+}
+.card-width {
+  max-width: var(--card-width);
+}
+@media screen and (min-width: calc(37.08rem + 1.6rem)) {
+  .text-width {
+    max-width: var(--text-width);
+  }
+  .text-width.force {
+    width: var(--text-width);
+  }
+}
+.page-width {
+  max-width: var(--page-width);
+}
+.page-width.force {
+  width: var(--page-width);
+}
+.feature-width {
+  max-width: calc(var(--page-width) * 1.6);
+}
+.feature-width.force {
+  width: calc(var(--page-width) * 1.6);
+}
+.full-width {
+  max-width: 100%;
+}
+.full-width.force {
+  width: 100%;
+}
+.inner-card-width {
+  padding-left: max(var(--pad), calc(50% - (var(--card-width) * 0.5)));
+  padding-right: max(var(--pad), calc(50% - (var(--card-width) * 0.5)));
+}
+.inner-card-width.padding {
+  padding-left: max(var(--pad), calc(50% - (var(--card-width) * 0.5) + var(--pad)));
+  padding-right: max(var(--pad), calc(50% - (var(--card-width) * 0.5) + var(--pad)));
+}
+.inner-text-width {
+  padding-left: calc(50% - (var(--text-width) * 0.5));
+  padding-right: calc(50% - (var(--text-width) * 0.5));
+}
+.inner-text-width.padding {
+  padding-left: max(var(--pad), calc(50% - (var(--text-width) * 0.5) + var(--pad)));
+  padding-right: max(var(--pad), calc(50% - (var(--text-width) * 0.5) + var(--pad)));
+}
+.inner-page-width {
+  padding-left: calc(50% - (var(--page-width) * 0.5));
+  padding-right: calc(50% - (var(--page-width) * 0.5));
+}
+.inner-page-width.padding {
+  padding-left: max(var(--pad), calc(50% - (var(--page-width) * 0.5) + var(--pad)));
+  padding-right: max(var(--pad), calc(50% - (var(--page-width) * 0.5) + var(--pad)));
+}
+.inner-feature-width {
+  padding-left: calc(50% - (var(--feature-width) * 0.5));
+  padding-right: calc(50% - (var(--feature-width) * 0.5));
+}
+.inner-feature-width.padding {
+  padding-left: max(var(--pad), calc(50% - (var(--feature-width) * 0.5) + var(--pad)));
+  padding-right: max(var(--pad), calc(50% - (var(--feature-width) * 0.5) + var(--pad)));
+}
+.hide {
+  display: none;
+}
+.hide.tablet {
+  display: initial;
+}
+.hide.desktop {
+  display: initial;
+}
+.hide.mobile {
+  display: none;
+}
+@media screen and (min-width: calc(37.08rem + 1.6rem)) {
+  .hide.mobile {
+    display: initial;
+  }
+  .hide.tablet {
+    display: none;
+  }
+}
+@media screen and (min-width: calc(59.99544rem + 1.6rem)) {
+  .hide.desktop {
+    display: none;
+  }
+  .hide.mobile.tablet {
+    display: initial;
+  }
+}
+.fixed {
+  position: fixed;
+}
+.fixed.tablet {
+  position: initial;
+}
+.fixed.desktop {
+  position: initial;
+}
+.fixed.mobile {
+  position: fixed;
+}
+@media screen and (min-width: calc(37.08rem + 1.6rem)) {
+  .fixed.mobile {
+    position: initial;
+  }
+  .fixed.tablet {
+    position: fixed;
+  }
+}
+@media screen and (min-width: calc(59.99544rem + 1.6rem)) {
+  .fixed.desktop {
+    position: fixed;
+  }
+  .fixed.mobile.tablet {
+    position: initial;
+  }
+}
+.no-padding-top {
+  padding-top: 0;
+}
+.no-padding-right {
+  padding-right: 0;
+}
+.no-padding-bottom {
+  padding-bottom: 0;
+}
+.no-padding-left {
+  padding-left: 0;
+}
+.no-margin-top {
+  margin-top: 0;
+}
+.no-margin-right {
+  margin-right: 0;
+}
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+.no-margin-left {
+  margin-left: 0;
+}
+.no-padding {
+  padding: 0;
+}
+.no-margin,
+.no-gutter {
+  margin: 0;
+}
+.no-side-margin,
+.no-side-margins {
+  margin-left: 0;
+  margin-right: 0;
+}
+.no-margins {
+  margin: 0;
+}
+.no-margins * {
+  margin: 0;
+}
+.no-min-width {
+  min-width: 0 !important;
+}
+.no-max-width {
+  max-width: 0 !important;
+}
+.no-min-height {
+  min-height: 0 !important;
+}
+.no-max-height {
+  max-height: 0 !important;
+}
+.no-box-shadow {
+  box-shadow: unset;
+}
+.no-text-shadow {
+  text-shadow: unset;
+}
+.no-shadow,
+.no-shadows,
+.no-shadows *,
+.flatten,
+.flatten * {
+  box-shadow: unset;
+  text-shadow: unset;
+}
+.no-border-radius {
+  border-radius: 0 !important;
+}
+.no-border,
+.no-borders,
+.no-borders * {
+  border-width: 0 !important;
+}
+.no-border-top {
+  border-top-width: 0 !important;
+}
+.no-border-right {
+  border-right-width: 0 !important;
+}
+.no-border-bottom {
+  border-bottom-width: 0 !important;
+}
+.no-border-left {
+  border-left-width: 0 !important;
+}
+.no-background {
+  background: transparent !important;
+}
+.no-bold {
+  font-weight: normal;
+}
+.no-overflow,
+.no-overflow * {
+  overflow: hidden;
+}
+.no-text-indent {
+  text-indent: 0;
+}
+.no-text,
+.no-text * {
+  text-indent: -9999px;
+  display: inline-block;
+}
+.no-text-align {
+  text-align: initial;
+}
+.no-underline {
+  text-decoration: none !important;
+}
+.no-underlines * {
+  text-decoration: none !important;
+}
+.no-user-select {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.no-pointer-events {
+  pointer-events: none;
+}
+.no-list-style {
+  list-style-type: none;
+  margin-left: 0;
+}
+.no-fade {
+  opacity: 1;
+}
+.no-gap,
+.no-column-gap {
+  gap: 0;
+  column-gap: 0;
+}
+.white {
+  --h: 194.3;
+  --s: 91.6%;
+  --l: 97.1%;
+}
+.light.white {
+  --l: 100%;
+}
+.dark.white {
+  --l: 77.1%;
+}
+.bright.white {
+  --s: 0%;
+  --l: 100%;
+}
+.dim.white {
+  --s: 66.6%;
+  --l: 87.1%;
+}
+.black {
+  --h: 194.3;
+  --s: 86.5%;
+  --l: 7.2%;
+}
+.light.black {
+  --l: 17.2%;
+}
+.dark.black {
+  --l: 0%;
+}
+.bright.black {
+  --s: 100%;
+  --l: 12.2%;
+}
+.dim.black {
+  --s: 0%;
+  --l: 0%;
+}
+.red,
+.failure,
+.error {
+  --h: 354.6;
+  --s: 72.8%;
+  --l: 46%;
+}
+.light.red,
+.light.failure,
+.light.error {
+  --l: 56%;
+}
+.dark.red,
+.dark.failure,
+.dark.error {
+  --l: 26%;
+}
+.bright.red,
+.bright.failure,
+.bright.error {
+  --s: 97.8%;
+  --l: 51%;
+}
+.dim.red,
+.dim.failure,
+.dim.error {
+  --s: 47.8%;
+  --l: 36%;
+}
+.orange,
+.warning {
+  --h: 38.8;
+  --s: 100%;
+  --l: 50%;
+}
+.light.orange,
+.light.warning {
+  --l: 60%;
+}
+.dark.orange,
+.dark.warning {
+  --l: 30%;
+}
+.bright.orange,
+.bright.warning {
+  --s: 100%;
+  --l: 55%;
+}
+.dim.orange,
+.dim.warning {
+  --s: 75%;
+  --l: 40%;
+}
+.yellow {
+  --h: 62.7;
+  --s: 99.9%;
+  --l: 52.3%;
+}
+.light.yellow {
+  --l: 62.3%;
+}
+.dark.yellow {
+  --l: 32.3%;
+}
+.bright.yellow {
+  --s: 100%;
+  --l: 57.3%;
+}
+.dim.yellow {
+  --s: 74.9%;
+  --l: 42.3%;
+}
+.green,
+.success {
+  --h: 130.5;
+  --s: 100%;
+  --l: 26.4%;
+}
+.light.green,
+.light.success {
+  --l: 36.4%;
+}
+.dark.green,
+.dark.success {
+  --l: 6.4%;
+}
+.bright.green,
+.bright.success {
+  --s: 100%;
+  --l: 31.4%;
+}
+.dim.green,
+.dim.success {
+  --s: 75%;
+  --l: 16.4%;
+}
+.teal {
+  --h: 180;
+  --s: 100%;
+  --l: 25.1%;
+}
+.light.teal {
+  --l: 35.1%;
+}
+.dark.teal {
+  --l: 5.1%;
+}
+.bright.teal {
+  --s: 100%;
+  --l: 30.1%;
+}
+.dim.teal {
+  --s: 75%;
+  --l: 15.1%;
+}
+.cyan {
+  --h: 180.2;
+  --s: 90%;
+  --l: 49.9%;
+}
+.light.cyan {
+  --l: 59.9%;
+}
+.dark.cyan {
+  --l: 29.9%;
+}
+.bright.cyan {
+  --s: 100%;
+  --l: 54.9%;
+}
+.dim.cyan {
+  --s: 65%;
+  --l: 39.9%;
+}
+.blue,
+.info {
+  --h: 234.7;
+  --s: 89%;
+  --l: 49.4%;
+}
+.light.blue,
+.light.info {
+  --l: 59.4%;
+}
+.dark.blue,
+.dark.info {
+  --l: 29.4%;
+}
+.bright.blue,
+.bright.info {
+  --s: 100%;
+  --l: 54.4%;
+}
+.dim.blue,
+.dim.info {
+  --s: 64%;
+  --l: 39.4%;
+}
+.purple {
+  --h: 289.3;
+  --s: 83.4%;
+  --l: 29.9%;
+}
+.light.purple {
+  --l: 39.9%;
+}
+.dark.purple {
+  --l: 9.9%;
+}
+.bright.purple {
+  --s: 100%;
+  --l: 34.9%;
+}
+.dim.purple {
+  --s: 58.4%;
+  --l: 19.9%;
+}
+.magenta {
+  --h: 290;
+  --s: 82.6%;
+  --l: 52.7%;
+}
+.light.magenta {
+  --l: 62.7%;
+}
+.dark.magenta {
+  --l: 32.7%;
+}
+.bright.magenta {
+  --s: 100%;
+  --l: 57.7%;
+}
+.dim.magenta {
+  --s: 57.6%;
+  --l: 42.7%;
+}
+.gray {
+  --h: 0;
+  --s: 0%;
+  --l: 50.2%;
+}
+.light.gray {
+  --l: 60.2%;
+}
+.dark.gray {
+  --l: 30.2%;
+}
+.bright.gray {
+  --s: 25%;
+  --l: 55.2%;
+}
+.dim.gray {
+  --s: 0%;
+  --l: 40.2%;
+}
+.base-color,
+.action,
+.primary {
+  --h: 204.1;
+  --s: 76.5%;
+  --l: 43.3%;
+}
+.light.base-color,
+.light.action,
+.light.primary {
+  --l: 53.3%;
+}
+.dark.base-color,
+.dark.action,
+.dark.primary {
+  --l: 23.3%;
+}
+.bright.base-color,
+.bright.action,
+.bright.primary {
+  --s: 100%;
+  --l: 48.3%;
+}
+.dim.base-color,
+.dim.action,
+.dim.primary {
+  --s: 51.5%;
+  --l: 33.3%;
+}
+.complement,
+.second.triad,
+.reaction,
+.secondary {
+  --h: 24.1;
+  --s: 76.5%;
+  --l: 43.3%;
+}
+.light.complement,
+.light.second.triad,
+.light.reaction,
+.light.secondary {
+  --l: 53.3%;
+}
+.dark.complement,
+.dark.second.triad,
+.dark.reaction,
+.dark.secondary {
+  --l: 23.3%;
+}
+.bright.complement,
+.bright.second.triad,
+.bright.reaction,
+.bright.secondary {
+  --s: 100%;
+  --l: 48.3%;
+}
+.dim.complement,
+.dim.second.triad,
+.dim.reaction,
+.dim.secondary {
+  --s: 51.5%;
+  --l: 33.3%;
+}
+.accent {
+  --h: 234.1;
+  --s: 76.5%;
+  --l: 43.3%;
+}
+.light.accent {
+  --l: 53.3%;
+}
+.dark.accent {
+  --l: 23.3%;
+}
+.bright.accent {
+  --s: 100%;
+  --l: 48.3%;
+}
+.dim.accent {
+  --s: 51.5%;
+  --l: 33.3%;
+}
+.second.accent {
+  --h: 174.1;
+  --s: 76.5%;
+  --l: 43.3%;
+}
+.light.second.accent {
+  --l: 53.3%;
+}
+.dark.second.accent {
+  --l: 23.3%;
+}
+.bright.second.accent {
+  --s: 100%;
+  --l: 48.3%;
+}
+.dim.second.accent {
+  --s: 51.5%;
+  --l: 33.3%;
+}
+.split {
+  --h: 294.1;
+  --s: 76.5%;
+  --l: 43.3%;
+}
+.light.split {
+  --l: 53.3%;
+}
+.dark.split {
+  --l: 23.3%;
+}
+.bright.split {
+  --s: 100%;
+  --l: 48.3%;
+}
+.dim.split {
+  --s: 51.5%;
+  --l: 33.3%;
+}
+.second.split {
+  --h: 114.1;
+  --s: 76.5%;
+  --l: 43.3%;
+}
+.light.second.split {
+  --l: 53.3%;
+}
+.dark.second.split {
+  --l: 23.3%;
+}
+.bright.second.split {
+  --s: 100%;
+  --l: 48.3%;
+}
+.dim.second.split {
+  --s: 51.5%;
+  --l: 33.3%;
+}
+.triad {
+  --h: 264.1;
+  --s: 76.5%;
+  --l: 43.3%;
+}
+.light.triad {
+  --l: 53.3%;
+}
+.dark.triad {
+  --l: 23.3%;
+}
+.bright.triad {
+  --s: 100%;
+  --l: 48.3%;
+}
+.dim.triad {
+  --s: 51.5%;
+  --l: 33.3%;
+}
+.third.triad {
+  --h: 144.1;
+  --s: 76.5%;
+  --l: 43.3%;
+}
+.light.third.triad {
+  --l: 53.3%;
+}
+.dark.third.triad {
+  --l: 23.3%;
+}
+.bright.third.triad {
+  --s: 100%;
+  --l: 48.3%;
+}
+.dim.third.triad {
+  --s: 51.5%;
+  --l: 33.3%;
+}
+.tetrad {
+  --h: 249.1;
+  --s: 76.5%;
+  --l: 43.3%;
+}
+.light.tetrad {
+  --l: 53.3%;
+}
+.dark.tetrad {
+  --l: 23.3%;
+}
+.bright.tetrad {
+  --s: 100%;
+  --l: 48.3%;
+}
+.dim.tetrad {
+  --s: 51.5%;
+  --l: 33.3%;
+}
+.second.tetrad {
+  --h: 339.1;
+  --s: 76.5%;
+  --l: 43.3%;
+}
+.light.second.tetrad {
+  --l: 53.3%;
+}
+.dark.second.tetrad {
+  --l: 23.3%;
+}
+.bright.second.tetrad {
+  --s: 100%;
+  --l: 48.3%;
+}
+.dim.second.tetrad {
+  --s: 51.5%;
+  --l: 33.3%;
+}
+.third.tetrad {
+  --h: 69.1;
+  --s: 76.5%;
+  --l: 43.3%;
+}
+.light.third.tetrad {
+  --l: 53.3%;
+}
+.dark.third.tetrad {
+  --l: 23.3%;
+}
+.bright.third.tetrad {
+  --s: 100%;
+  --l: 48.3%;
+}
+.dim.third.tetrad {
+  --s: 51.5%;
+  --l: 33.3%;
+}
+.fourth.tetrad {
+  --h: 159.1;
+  --s: 76.5%;
+  --l: 43.3%;
+}
+.light.fourth.tetrad {
+  --l: 53.3%;
+}
+.dark.fourth.tetrad {
+  --l: 23.3%;
+}
+.bright.fourth.tetrad {
+  --s: 100%;
+  --l: 48.3%;
+}
+.dim.fourth.tetrad {
+  --s: 51.5%;
+  --l: 33.3%;
+}
+.warm {
+  --a: 0.2;
+  background-image: linear-gradient(rgba(215.8, 97.5, 108.1, var(--a)), rgba(215.8, 97.5, 108.1, var(--a)));
+}
+.cool {
+  --a: 0.2;
+  background-image: linear-gradient(rgba(11.7, 195, 195.5, var(--a)), rgba(11.7, 195, 195.5, var(--a)));
+}
+.neutral {
+  --a: 0.2;
+  background-image: linear-gradient(rgba(34.8, 128.6, 191.8, var(--a)), rgba(34.8, 128.6, 191.8, var(--a)));
+}
+.dull {
+  --a: 0.2;
+  background-image: linear-gradient(rgba(110.5, 110.5, 110.5, var(--a)), rgba(110.5, 110.5, 110.5, var(--a)));
+}
+.red,
+.failure,
+.error {
+  --h: 354.6;
+  --s: 72.8%;
+  --l: 46%;
+}
+.light.red,
+.light.failure,
+.light.error {
+  --l: 56%;
+}
+.dark.red,
+.dark.failure,
+.dark.error {
+  --l: 26%;
+}
+.bright.red,
+.bright.failure,
+.bright.error {
+  --s: 97.8%;
+  --l: 51%;
+}
+.dim.red,
+.dim.failure,
+.dim.error {
+  --s: 47.8%;
+  --l: 36%;
+}
+.orange,
+.warning {
+  --h: 38.8;
+  --s: 100%;
+  --l: 50%;
+}
+.light.orange,
+.light.warning {
+  --l: 60%;
+}
+.dark.orange,
+.dark.warning {
+  --l: 30%;
+}
+.bright.orange,
+.bright.warning {
+  --s: 100%;
+  --l: 55%;
+}
+.dim.orange,
+.dim.warning {
+  --s: 75%;
+  --l: 40%;
+}
+.yellow {
+  --h: 62.7;
+  --s: 99.9%;
+  --l: 52.3%;
+}
+.light.yellow {
+  --l: 62.3%;
+}
+.dark.yellow {
+  --l: 32.3%;
+}
+.bright.yellow {
+  --s: 100%;
+  --l: 57.3%;
+}
+.dim.yellow {
+  --s: 74.9%;
+  --l: 42.3%;
+}
+.green,
+.success {
+  --h: 130.5;
+  --s: 100%;
+  --l: 26.4%;
+}
+.light.green,
+.light.success {
+  --l: 36.4%;
+}
+.dark.green,
+.dark.success {
+  --l: 6.4%;
+}
+.bright.green,
+.bright.success {
+  --s: 100%;
+  --l: 31.4%;
+}
+.dim.green,
+.dim.success {
+  --s: 75%;
+  --l: 16.4%;
+}
+.teal {
+  --h: 180;
+  --s: 100%;
+  --l: 25.1%;
+}
+.light.teal {
+  --l: 35.1%;
+}
+.dark.teal {
+  --l: 5.1%;
+}
+.bright.teal {
+  --s: 100%;
+  --l: 30.1%;
+}
+.dim.teal {
+  --s: 75%;
+  --l: 15.1%;
+}
+.cyan {
+  --h: 180.2;
+  --s: 90%;
+  --l: 49.9%;
+}
+.light.cyan {
+  --l: 59.9%;
+}
+.dark.cyan {
+  --l: 29.9%;
+}
+.bright.cyan {
+  --s: 100%;
+  --l: 54.9%;
+}
+.dim.cyan {
+  --s: 65%;
+  --l: 39.9%;
+}
+.blue,
+.info {
+  --h: 234.7;
+  --s: 89%;
+  --l: 49.4%;
+}
+.light.blue,
+.light.info {
+  --l: 59.4%;
+}
+.dark.blue,
+.dark.info {
+  --l: 29.4%;
+}
+.bright.blue,
+.bright.info {
+  --s: 100%;
+  --l: 54.4%;
+}
+.dim.blue,
+.dim.info {
+  --s: 64%;
+  --l: 39.4%;
+}
+.purple {
+  --h: 289.3;
+  --s: 83.4%;
+  --l: 29.9%;
+}
+.light.purple {
+  --l: 39.9%;
+}
+.dark.purple {
+  --l: 9.9%;
+}
+.bright.purple {
+  --s: 100%;
+  --l: 34.9%;
+}
+.dim.purple {
+  --s: 58.4%;
+  --l: 19.9%;
+}
+.magenta {
+  --h: 290;
+  --s: 82.6%;
+  --l: 52.7%;
+}
+.light.magenta {
+  --l: 62.7%;
+}
+.dark.magenta {
+  --l: 32.7%;
+}
+.bright.magenta {
+  --s: 100%;
+  --l: 57.7%;
+}
+.dim.magenta {
+  --s: 57.6%;
+  --l: 42.7%;
+}
+
+	</style>
+
+</body></html>
