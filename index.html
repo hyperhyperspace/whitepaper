@@ -2263,10 +2263,12 @@ button:active {
 				applications use a single data structure to represent information: an <b>immutable, append-only 
 				Merkle-DAG</b>. This is a generalization of the model used 
 				by blockchain-based cryptocurrencies, but instead of storing financial transactions, each node in 
-				the graph may contain an arbitrary application-defined JSON-like object. Objects reference each 
-				other by using their cryptographic hashes, like blocks do in a blockchain, and are authenticated
-				using cryptographic signatures. The resulting Merkle-DAG can be synchronized 
-				accross devices and verified efficently. It forms the basis of Hyper Hyper Space's interoperability 
+				the graph may contain an arbitrary application-defined JSON object. Objects reference each 
+				other by using their cryptographic hashes, like blocks do in a blockchain, and may use other topologies
+        besides a linear chain. There is no built-in consensus mechanism, and one is not needed for most use 
+        cases. Applications are free to define one, when suitable, by customizing the gossip rules.</p>
+        <p>The 
+        resulting Merkle-DAG can be synchronized accross devices and verified efficently. It forms the basis of Hyper Hyper Space's interoperability 
 				capabilities.</p>
 
 				<h6>Data Model</h6>
@@ -2344,10 +2346,7 @@ button:active {
 			
 			<p>The created <span class="monospace">MutableSet</span> object, that initially represents an empty set,
 			includes a random seed in its JSON-like representation. This makes its hash <span class="monospace light warm green">c111fa…</span>
-			unique. Otherwise, the system would accept a <b>single</b> empty set
-object, like in the mathematical definition
-			of set theory, where extensional equality makes all empty sets 
-represent the same entity. As operations adding and removing elements 
+			unique. Otherwise, <span class="monospace">new MutableSet()</span> would always return a reference to the <i>same</i> empty set. As operations adding and removing elements 
 from the set are later appended to the DAG, the hash 
 			of the set object itself remains constant and can be safely used to 
 create references in the rest of the model.
